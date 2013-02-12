@@ -7,6 +7,11 @@ gem 'rails', '3.2.7'
 group :test, :development do
   gem 'sqlite3'
   gem "rspec-rails"
+  gem 'spork'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem "shoulda-matchers"
 end
 
 
@@ -25,6 +30,10 @@ end
 
 gem 'jquery-rails'
 gem 'heroku'
+# Gemfile in Rails >= 3.1
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+gem 'client_side_validations'
 
 group :production do
   gem 'pg', '0.12.2'

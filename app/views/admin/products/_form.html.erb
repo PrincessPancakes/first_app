@@ -1,0 +1,14 @@
+<%= semantic_form_for [:admin, Product.new] do |f| %>
+    <%= f.input :brand %>
+    <%= f.input :gender %>
+    <%= f.input :url %>
+    <%= f.input :category %>
+    <%= f.input :material %>
+    <%= f.input :name %>
+
+    <%= f.semantic_fields_for :sizes do |sizes| %>
+        <%= sizes.input %>
+    <% end %>
+
+    <%= f.actions :submit %>
+<% end %>
