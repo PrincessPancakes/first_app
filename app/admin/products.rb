@@ -47,22 +47,32 @@ ActiveAdmin.register Product do
     end
 
 
-
-    product.measurements.each do |measurement|
+    measurements = product.measurements.group_by{|m| m.size}
+    measurements.each do |size, measurements|
       div do
-        panel("Measurements for Size #{measurement.size}") do
-          attributes_table_for(measurement) do
-            TShirtsMeasurement.points.each do |m|
-              row m.to_sym
+        panel("Measurements for Size #{size} - #{measurements.first.status}") do
+          measurements.each do |measurement|
+            attributes_table_for(measurement) do
+              row :admin_user
+              row :created_at
+              product.points.each do |m|
+                row m.to_sym
+              end
             end
-
+            if measurements.length == 1
+              div do
+                link_to "Verify Measurements", new_admin_product_measurement_path(product.id, measurement_id: measurement.id)
+              end
+            end
           end
+
+
         end
       end
     end
 
     panel("actions") do
-      new_measurement_link(product.id)
+      new_measurement_link(product)
     end
 
     active_admin_comments

@@ -11,7 +11,7 @@ FactoryGirl.define do
 
   factory :american_apparel, parent: :brand do
     name 'American Apparel'
-    website 'http://store.americanapparel.net//'
+    website 'http://store.americanapparel.net/'
   end
 
   factory :gap, parent: :brand do

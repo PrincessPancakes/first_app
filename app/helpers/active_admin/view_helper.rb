@@ -1,5 +1,5 @@
 module ActiveAdmin::ViewHelper
-  def new_measurement_link(product_id)
-    link_to "Enter Measurement Data", new_admin_product_t_shirts_measurement_path(product_id)
+  def new_measurement_link(product)
+    link_to "Enter Measurement Data", new_admin_product_measurement_path(product.id, type: product.measurement_class, id: "enter-data-link")
   end
 end

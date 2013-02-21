@@ -7,11 +7,17 @@ gem 'rails', '3.2.7'
 group :test, :development do
   gem 'sqlite3'
   gem "rspec-rails"
-  gem 'spork'
+  gem 'minitest'
+  gem 'rr'
+  gem 'turn'
+  gem 'activerecord-nulldb-adapter', :git => 'git://github.com/nulldb/nulldb.git'
+  gem 'spork', '0.9.0'
   gem 'factory_girl_rails'
-  gem 'capybara'
+  #gem 'capybara'
   gem 'capybara-webkit'
   gem "shoulda-matchers"
+  gem 'database_cleaner'
+  gem 'cucumber-rails', :require => false
 end
 
 
