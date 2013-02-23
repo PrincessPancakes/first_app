@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214232224) do
+ActiveRecord::Schema.define(:version => 20130223232809) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20130214232224) do
     t.datetime "updated_at",           :null => false
     t.integer  "measurement_group_id"
     t.integer  "size_id"
+    t.string   "size"
   end
 
   add_index "measurements", ["admin_user_id"], :name => "index_measurements_on_admin_user_id"
@@ -116,10 +117,11 @@ ActiveRecord::Schema.define(:version => 20130214232224) do
     t.string   "url"
     t.string   "material"
     t.string   "status"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "sizes"
-    t.integer  "size_type_id"
+    t.string   "size_type"
+    t.string   "tags"
   end
 
   add_index "products", ["brand_id"], :name => "index_products_on_brand_id"
@@ -158,6 +160,7 @@ ActiveRecord::Schema.define(:version => 20130214232224) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "image_url"
   end
 
   add_index "styles", ["product_id"], :name => "index_styles_on_product_id"

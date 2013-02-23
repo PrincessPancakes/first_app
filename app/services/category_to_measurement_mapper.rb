@@ -1,8 +1,9 @@
 class CategoryToMeasurementMapper
   CATEGORY_TO_MEASUREMENT = {
       "t-shirts" => "TShirts",
-      "hoodies" => "LongSleeve",
-      "jeans" => "Pants"
+      "long sleeve" => "LongSleeve",
+      "jeans" => "Pants",
+      "sleeveless" => "Sleeveless"
   }
 
 

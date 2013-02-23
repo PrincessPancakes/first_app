@@ -1,13 +1,15 @@
+require 'active_record'
+
 class Product < ActiveRecord::Base
   belongs_to :brand
   belongs_to :category
-  belongs_to :size_type
+  #belongs_to :size_type
 
-  has_many :styles
-  has_many :measurement_groups
+  has_many :styles, dependent: :destroy
+  has_many :measurement_groups, dependent: :destroy
   has_many :measurements, through: :measurement_groups
 
-  attr_accessible :gender, :identifier, :material, :name, :sizes, :status, :url, :brand_id, :category_id
+  attr_accessible :gender, :identifier, :material, :name, :sizes, :status, :url, :brand_id, :category_id, :brand, :category, :size_type
 
   validates_presence_of :brand_id, :category_id, :gender, :identifier, :name, :url, :status, :size_type
 
@@ -26,6 +28,10 @@ class Product < ActiveRecord::Base
 
   def measurement_class
     CategoryToMeasurementMapper.get_measurement_class(category.name)
+  end
+
+  def first_group
+    measurement_groups.first || measurement_groups.create!(description: "Regular")
   end
 
   def points

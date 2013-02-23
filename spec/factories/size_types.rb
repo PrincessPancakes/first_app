@@ -6,4 +6,8 @@ FactoryGirl.define do
     options "MyString"
 
   end
+
+  factory :alpha do
+    name "alpha"
+  end
 end

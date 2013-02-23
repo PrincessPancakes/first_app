@@ -66,6 +66,7 @@ GEM
     capybara-webkit (0.12.1)
       capybara (>= 1.0.0, < 1.2)
       json
+    casperjs (1.0.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     client_side_validations (3.1.4)
@@ -245,6 +246,7 @@ DEPENDENCIES
   activeadmin
   activerecord-nulldb-adapter!
   capybara-webkit
+  casperjs
   client_side_validations
   coffee-rails (~> 3.2.1)
   cucumber-rails

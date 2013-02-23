@@ -1,6 +1,6 @@
 class MeasurementGroup < ActiveRecord::Base
   belongs_to :product
-  has_many :measurements
+  has_many :measurements, dependent: :destroy
   has_many :sequence_flags
 
   attr_accessible :description

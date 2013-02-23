@@ -2,9 +2,11 @@ class SpecDataInputEngine
 
   attr_writer :data_sink
 
-  def create(params)
-    @measurement = data_sink.new(params)
-    @other = data_sink.by_product_and_size(params[:product_id], params[:size_id])
+  def create(product_id, params)
+    @product = Product.find(product_id)
+
+    @measurement = data_sink.new(params.merge({status: "unverified"}))
+    @other = data_sink.by_product_and_size(product_id, params[:size])
 
     unless @other.nil?
       if compare
@@ -79,11 +81,11 @@ class SpecDataInputEngine
   end
 
   def find_other(product_id, size_id)
-    data_sink.by_product_and_size(product_id, :size_id)
+    data_sink.by_product_and_size(product_id, :size)
   end
 
   def data_sink
-    @data_sink ||= Measurement
+    @data_sink ||= @product.measurement_class.constantize
   end
 
 end

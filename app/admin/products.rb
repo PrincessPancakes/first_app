@@ -21,6 +21,7 @@ ActiveAdmin.register Product do
       row :brand
       row :category
       row :identifier
+      row :tags
       row :url do
         link_to product.url, product.url
       end
@@ -36,7 +37,8 @@ ActiveAdmin.register Product do
       div do
         panel("Style") do
           attributes_table_for(style) do
-            row :description
+            row :content
+            row :image_url
             #row :picture do
             #  image_tag style.image.image_url(:grid)
             #
@@ -53,7 +55,7 @@ ActiveAdmin.register Product do
         panel("Measurements for Size #{size} - #{measurements.first.status}") do
           measurements.each do |measurement|
             attributes_table_for(measurement) do
-              row :admin_user
+              #row :admin_user
               row :created_at
               product.points.each do |m|
                 row m.to_sym

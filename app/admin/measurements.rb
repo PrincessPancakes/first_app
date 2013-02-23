@@ -17,10 +17,10 @@ ActiveAdmin.register Measurement do
     def new
       @product = Product.find(params[:product_id])
       if params[:measurement_id]
-        original = Measurement.find(params[:measurement_id])
-        @measurement = @product.measurement_class.constantize.new(product_id: params[:product_id], size: original.size, position: original.position)
+        @original = @product.measurement_class.constantize.find(params[:measurement_id])
+        @measurement = @product.measurement_class.constantize.new(@original.points_hash)
       else
-        group = @product.measurement_groups.new
+        group = @product.first_group
         @measurement = group.new_measurement
       end
 
@@ -30,8 +30,15 @@ ActiveAdmin.register Measurement do
 
     def create
       @product = Product.find(params[:product_id])
-      @measurement = @product.measurement_class.constantize.new(params[:measurement], admin_user_id: current_admin_user.id)
-      create!
+      #SpecDataInputEngine.new.create(params)
+      #@measurement = @product.measurement_class.constantize.create!(params[:measurement], admin_user_id: current_admin_user.id)
+      @measurement = SpecDataInputEngine.new.create(@product.id, params[:measurement])
+
+      if @measurement
+        redirect_to admin_product_path(@product)
+      else
+        render :new
+      end
       # Instance method
     end
 
@@ -47,7 +54,7 @@ ActiveAdmin.register Measurement do
 
 
     f.inputs "Data" do
-      f.input :size
+      f.input :size, :as => :radio, :collection => SizeType::Alpha.options
       #f.input :position
 
       link_to "testing", admin_root_path

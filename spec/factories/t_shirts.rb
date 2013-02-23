@@ -1,13 +1,13 @@
 FactoryGirl.define do
-  factory :alpha, parent: :size_type do
-    name "alpha"
-
-    after(:stub) do |alpha|
-      build_stubbed(:small, size_type: alpha)
-      build_stubbed(:medium, size_type: alpha)
-      build_stubbed(:large, size_type: alpha)
-    end
-  end
+  #factory :alpha, parent: :size_type do
+  #  name "alpha"
+  #
+  #  after(:stub) do |alpha|
+  #    build_stubbed(:small, size_type: alpha)
+  #    build_stubbed(:medium, size_type: alpha)
+  #    build_stubbed(:large, size_type: alpha)
+  #  end
+  #end
 
   factory :s_gap_t_shirt, parent: :product do |product|
     product.size_type { |p| p.association(:alpha) }
