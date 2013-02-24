@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6560852-5f5d-4e95-9dc8-3b5580a93cbc" name="Default" comment="Product model added&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/products.rb" afterPath="$PROJECT_DIR$/app/admin/products.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/scraper.rb" afterPath="$PROJECT_DIR$/app/scrapers/scraper.rb" />
     </list>
     <ignored path="stylekick.iws" />
@@ -56,7 +54,7 @@
       <file leaf-file-name="scraper.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scrapers/scraper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="39" selection-start="839" selection-end="839" vertical-scroll-proportion="0.50442475">
+            <state line="65" column="22" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.6106195">
               <folding />
             </state>
           </provider>
@@ -890,7 +888,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scrapers/scraper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="39" selection-start="839" selection-end="839" vertical-scroll-proportion="0.50442475">
+        <state line="65" column="22" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.6106195">
           <folding />
         </state>
       </provider>

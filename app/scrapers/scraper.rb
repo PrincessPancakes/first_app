@@ -61,7 +61,7 @@ class Scraper
         "276" => build_hash("t-shirts", "men"),
         "260" => build_hash("t-shirts", "men")
     }
-    map[cid.to_s]
+    map[cid.to_s] || build_hash("long sleeve", "women")
 
   end
 
