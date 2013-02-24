@@ -5,6 +5,8 @@ ActiveAdmin.register Product do
   scope :unverified
   scope :flagged
 
+  filter :identifier
+
   #collection_action :new, :method => :get do
   #  @size = Size.new
   #  @measurement = TShirtsMeasurement.new

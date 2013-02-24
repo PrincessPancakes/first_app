@@ -34,7 +34,7 @@ class Scraper
     @product = Product.create!(
         name: @output["name"],
         identifier: @output["identifier"],
-        brand: Brand.find_by_name("Banana Republic"),
+        brand: Brand.find_by_name("Gap"),
         url: @url,
         category: result[:category],
         gender: result[:gender],
@@ -70,7 +70,7 @@ class Scraper
   end
 
   def build_category(name)
-    Category.find_by_name!(name)
+    Category.find_by_name!(name) || "long sleeve"
   end
 
 
