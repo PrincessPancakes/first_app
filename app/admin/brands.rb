@@ -1,3 +1,3 @@
-ActiveAdmin.register Brand do
-  
-end
+#ActiveAdmin.register Brand do
+#
+#end
