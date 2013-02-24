@@ -54,7 +54,7 @@
       <file leaf-file-name="scraper.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scrapers/scraper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="22" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.6106195">
+            <state line="42" column="34" selection-start="998" selection-end="998" vertical-scroll-proportion="0.539823">
               <folding />
             </state>
           </provider>
@@ -888,7 +888,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scrapers/scraper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="22" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.6106195">
+        <state line="42" column="34" selection-start="998" selection-end="998" vertical-scroll-proportion="0.539823">
           <folding />
         </state>
       </provider>

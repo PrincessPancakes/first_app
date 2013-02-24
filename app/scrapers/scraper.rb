@@ -39,7 +39,7 @@ class Scraper
         category: result[:category],
         gender: result[:gender],
         status: "incomplete",
-        size_type: SizeType::Base.get_from_options(@output["sizes"]).to_s
+        size_type: SizeType::Alpha#SizeType::Base.get_from_options(@output["sizes"]).to_s
     )
 
     @output["groups"].each do |group|
