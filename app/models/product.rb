@@ -9,12 +9,15 @@ class Product < ActiveRecord::Base
   has_many :measurement_groups, dependent: :destroy
   has_many :measurements, through: :measurement_groups
 
-  attr_accessible :gender, :identifier, :material, :name, :sizes, :status, :url, :brand_id, :category_id, :brand, :category, :size_type
+  attr_accessible :gender, :identifier, :material, :name, :sizes, :status, :url, :brand_id, :category_id, :brand, :category, :size_type, :tags
 
   validates_presence_of :brand_id, :category_id, :gender, :identifier, :name, :url, :status, :size_type
 
-  validates_inclusion_of :gender, in: %w( men women unisex )
-  validates_inclusion_of :status, in: %w(flagged active incomplete)
+  GENDER_OPTIONS = %w( men women unisex )
+  STATUS_OPTIONS = %w(flagged active incomplete)
+
+  validates_inclusion_of :gender, in: GENDER_OPTIONS
+  validates_inclusion_of :status, in: STATUS_OPTIONS
 
   #accepts_nested_attributes_for :sizes
 

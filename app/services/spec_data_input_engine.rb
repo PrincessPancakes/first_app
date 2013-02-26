@@ -8,19 +8,19 @@ class SpecDataInputEngine
     @measurement = data_sink.new(params.merge({status: "unverified"}))
     @other = data_sink.by_product_and_size(product_id, params[:size])
 
-    unless @other.nil?
-      if compare
-        @other.verify
-        @measurement.verify
-      else
-        @measurement.flag_product
-      end
-      @other.save!
-    end
-
-    unless valid_sequence?
-      @measurement.flag_product
-    end
+    #unless @other.nil?
+    #  if compare
+    #    @other.verify
+    #    @measurement.verify
+    #  else
+    #    @measurement.flag_product
+    #  end
+    #  @other.save!
+    #end
+    #
+    #unless valid_sequence?
+    #  @measurement.flag_product
+    #end
 
     @measurement.save!
   end

@@ -3,7 +3,17 @@ class CategoryToMeasurementMapper
       "t-shirts" => "TShirts",
       "long sleeve" => "LongSleeve",
       "jeans" => "Pants",
-      "sleeveless" => "Sleeveless"
+      "sleeveless" => "Sleeveless",
+      "dress shirts" => "LongSleeve",
+      "casual shirts" => "LongSleeve",
+      "polos" => "TShirts",
+      "sweaters" => "LongSleeve",
+      "jackets" => "LongSleeve",
+      "blazers" => "LongSleeve",
+      "suit jackets" => "LongSleeve",
+      "suit pants" => "Pants",
+      "vests" => "Sleeveless",
+      "blouses" => "LongSleeve"
   }
 
 

@@ -7,4 +7,6 @@
 #end
 
 module SizeType
+  OPTIONS = %w(SizeType::Alpha)
+
 end

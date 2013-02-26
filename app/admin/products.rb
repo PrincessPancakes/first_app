@@ -6,6 +6,9 @@ ActiveAdmin.register Product do
   scope :flagged
 
   filter :identifier
+  filter :gender
+  filter :category
+  filter :brand
 
   #collection_action :new, :method => :get do
   #  @size = Size.new
@@ -14,7 +17,24 @@ ActiveAdmin.register Product do
   #  puts @size.measurement
   #end
 
+  index do
+    column :identifier do |product|
+      link_to product.identifier, admin_product_path(product)
+    end
+    column :gender
+    column :category
+    column :brand
+    column :name do |product|
+      link_to product.name, admin_product_path(product)
+    end
+    column :url do |product|
+      link_to product.url, product.url
+    end
+    column :tags
 
+    default_actions
+
+  end
   show do |product|
     attributes_table do
       row :status
@@ -80,6 +100,23 @@ ActiveAdmin.register Product do
     end
 
     active_admin_comments
+  end
+
+  form do |f|
+    f.inputs "Product" do
+      f.input :brand
+      f.input :category
+      f.input :gender, :as => :radio, :collection => Product::GENDER_OPTIONS
+      f.input :identifier
+      f.input :name
+      f.input :url
+      f.input :status, :as => :select, :collection => Product::STATUS_OPTIONS
+      f.input :size_type, :as => :radio, :collection => SizeType::OPTIONS
+      f.input :tags
+    end
+
+    f.buttons
+
   end
 
 end

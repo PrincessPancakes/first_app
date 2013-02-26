@@ -2,6 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 
 gem 'minitest' # demand gem version
 require 'minitest/autorun'
+require 'minitest/spec'
 require 'rr'
 require 'ostruct'
 $: << File.expand_path('../lib', File.dirname(__FILE__))

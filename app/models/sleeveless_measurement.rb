@@ -1,9 +1,9 @@
 class SleevelessMeasurement < Measurement
   validates :waist, :opening, :hps_length, :cb_length, :chest,
-            :shoulder, :arm_hole, presence: true
+             presence: true
 
   def self.points
-    [ :waist, :opening, :hps_length, :cb_length, :chest,
-      :shoulder, :arm_hole ]
+    [ :chest, :waist, :opening, :cb_length, :hps_length,
+      :shoulder, :arm_hole, :collar ]
   end
 end
