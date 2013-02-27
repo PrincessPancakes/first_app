@@ -15,10 +15,11 @@ group :test, :development do
   gem 'factory_girl_rails'
   #gem 'capybara'
   gem 'capybara-webkit'
-  gem "shoulda-matchers"
+  #gem "shoulda-matchers"
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'jasminerice'
+  gem "mocha", "~> 0.12.8"
 end
 
 

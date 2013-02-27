@@ -1,5 +1,5 @@
 require_relative '../spec_helper_lite'
-stub_module "Rails"
+stub_module "Rails" #for fast testing
 
 require_relative '../../app/scrapers/casper_js'
 

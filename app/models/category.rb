@@ -6,6 +6,10 @@ class Category < ActiveRecord::Base
   validates_presence_of :name, :gender
   validates_uniqueness_of :name
   validates_inclusion_of :gender, in: %w( men women both )
+
+  def self.unknown
+    Category.find_by_name("unknown")
+  end
 end
 #class Category
 #  def measurement_class
