@@ -10,7 +10,7 @@
 
     <div id="splash_copy">
       Meet Stylekick - a place where you can keep track of your clothes, share your style, and find the right fit at all of our brand partners.
-      Keep in touch, we'll let you know as soon as we launch!
+      Enter your email and we'll let you know as soon as we launch!
 
     </div>
 
@@ -18,6 +18,9 @@
       <%= form_for @beta_request do |f| %>
           <% @beta_request.errors.full_messages.each do |msg| %>
               <p class="error"><%= msg %></p>
+          <% end %>
+          <% if flash[:notice]  %>
+              <p class="notice"><%= flash[:notice] %></p>
           <% end %>
 
           <%= f.email_field :email, placeholder: "Enter your email"  %><br /><br />
