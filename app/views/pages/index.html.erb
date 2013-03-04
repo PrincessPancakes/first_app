@@ -1,0 +1,29 @@
+<div id="splash_container">
+  <nav id="social_media_links">
+    <%= link_to image_tag("fb.png"), "http://www.facebook.com/stylekick" %>
+    <%= link_to image_tag("twitter.png"), "http://www.twitter.com/stylekick" %>
+    <%= image_tag "g+.png" %>
+
+  </nav>
+
+  <div id="splash_content">
+
+    <div id="splash_copy">
+      Meet Stylekick - a place where you can keep track of your clothes, share your style, and find the right fit at all of our brand partners.
+      Keep in touch, we'll let you know as soon as we launch!
+
+    </div>
+
+    <div id="beta_request">
+      <%= form_for @beta_request do |f| %>
+          <% @beta_request.errors.full_messages.each do |msg| %>
+              <p class="error"><%= msg %></p>
+          <% end %>
+
+          <%= f.email_field :email, placeholder: "Enter your email"  %><br /><br />
+          <%= f.submit "" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

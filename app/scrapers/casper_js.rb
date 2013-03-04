@@ -12,7 +12,7 @@ class CasperJS
 
     begin
       response = scrape_product
-      #puts response.inspect
+      puts response.inspect
       JSON.parse(response)
     rescue JSON::ParserError
       #puts response.inspect
@@ -35,14 +35,11 @@ class CasperJS
   end
 
   def scraper_file
-    #"#{path}#{@brand.downcase}.coffee"
-    "#{path}gap.coffee"
+    "#{path}out.coffee"
   end
 
   def scrape_product
-    #puts "scraping"
-
-    `casperjs "#{scraper_file}" "#{brand}" "#{escaped_url}"`
+    `casperjs "#{scraper_file}" "#{brand}" "--url=#{escaped_url}"`
   end
 
   def brand

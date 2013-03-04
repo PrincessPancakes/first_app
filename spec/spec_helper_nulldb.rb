@@ -1,19 +1,3 @@
-#require "bundler/setup"
-#require_relative 'spec_helper_lite'
-#
-#module SpecHelpers
-#  def setup_nulldb
-#    require 'nulldb'
-#    schema_path = File.expand_path('../db/schema.rb', File.dirname(__FILE__))
-#    NullDB.nullify(:schema => schema_path)
-#  end
-#
-#  def teardown_nulldb
-#    NullDB.restore
-#  end
-#end
-#from http://patrickward.com/code/2012/04/09/using-nulldb-with-minitest-spec/
-
 require "bundler/setup"
 require_relative 'spec_helper_lite'
 
@@ -35,3 +19,4 @@ module SpecHelpers
     ActiveRecord::Base.establish_connection(spec['test'])
   end
 end
+

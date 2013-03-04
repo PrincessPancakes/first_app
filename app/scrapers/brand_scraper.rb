@@ -48,6 +48,7 @@ class BrandScraper
 
 
   def scrape_product(url)
+    puts "Begin scraping"
     @driver.new(@brand).scrape_url(url)
   end
 
@@ -59,3 +60,4 @@ class BrandScraper
     @creator.create_or_update(product)
   end
 end
+

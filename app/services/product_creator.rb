@@ -63,6 +63,7 @@ class ProductCreator
         "384" => build_hash("sleeveless", "women"),
         "379" => build_hash("t-shirts", "women"),
         "396" => build_hash("sweaters", "women"),
+        "292" => build_hash("blouses", "women")
     }
     map[cid.to_s] || build_hash(Category.unknown, "unisex")
 

@@ -1,0 +1,95 @@
+@import "compass";
+@import "compass/reset";
+@import "fonts";
+
+html,body {
+  //height:100%;
+
+  //font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: PlutoSansRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #150f0e;
+}
+
+
+
+
+#splash_container {
+  width: 1280px;
+  height: 840px;
+  color: white;
+  margin-left: auto ;
+  margin-right: auto ;
+  background: url('splash.jpg');
+  border: none;
+
+  nav{
+    text-align: right;
+    padding-top: 29px;
+    padding-right: 40px;
+
+    a{
+      margin-right: 9px;
+    }
+  }
+
+
+  // needs latest Compass, add '@import "compass"' to your scss
+  //background-color: #424444; // Old browsers
+  //@include filter-gradient(#424444, #000000, horizontal); // IE6-9 fallback on horizontal gradient
+  //@include background-image(radial-gradient(center, ellipse cover,  #282828 0%,#150F0E 15%));
+
+  #splash_copy{
+    //position: relative;
+    //top: 395px;
+    padding-top: 395px;
+    width: 380px;
+    margin-left: auto ;
+    margin-right: auto ;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 1.2;
+  }
+  #beta_request{
+    //position: relative;
+    //top: 485px;
+
+    //left: 85px;
+
+    padding-top: 50px;
+    width: 215px;
+    margin-left: auto ;
+    margin-right: auto ;
+
+
+    .error{
+      font-weight: 200;
+      //background: white;
+      color: red;
+      padding-bottom: 10px;
+      width: 215px;
+      margin-left: auto ;
+      margin-right: auto ;
+    }
+
+    input{
+      width:215px;
+      height: 20px;
+      background: transparent;
+      color: white;
+    }
+
+
+
+    input[type="submit"]
+    {
+      position: relative;
+      left: 70px;
+      width:85px;
+      height: 30px;
+      background:url(go.png);
+      border: none;
+    }
+  }
+}
+
+
