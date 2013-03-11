@@ -2,68 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6560852-5f5d-4e95-9dc8-3b5580a93cbc" name="Default" comment="Product model added&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/beta_requests.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/closet_items.js.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/closet_items.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/closet_items_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/closet_items_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/closet_item.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/item.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/size_type/women_numeric.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/closet_items/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/br_items.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cm_items.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20130311154202_devise_create_users.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20130311155147_add_gender_to_user.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20130311160604_create_items.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20130311164341_create_closet_items.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/closet_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/user_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/virtual_closet.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gap_items.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/br.rake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/cm.rake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/gap.rake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/closet_items_controller_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/closet_items.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/items.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/users.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/closet_items_helper_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/closet_item_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/item_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/user_spec.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/models/size_type/alpha.rb" afterPath="$PROJECT_DIR$/app/models/size_type/base.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/stylekick.iml" afterPath="$PROJECT_DIR$/.idea/stylekick.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/measurements.rb" afterPath="$PROJECT_DIR$/app/admin/measurements.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application-de3951344ec2c98e491b2ac9abc90edb.js.gz" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/measurement.rb" afterPath="$PROJECT_DIR$/app/models/measurement.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/product.rb" afterPath="$PROJECT_DIR$/app/models/product.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/size_type.rb" afterPath="$PROJECT_DIR$/app/models/size_type.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/size_type/alpha.rb" afterPath="$PROJECT_DIR$/app/models/size_type/alpha.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/brand_scraper.rb" afterPath="$PROJECT_DIR$/app/scrapers/brand_scraper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/out.coffee" afterPath="$PROJECT_DIR$/app/scrapers/out.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/src/american_apparel.coffee" afterPath="$PROJECT_DIR$/app/scrapers/src/american_apparel.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/src/base.coffee" afterPath="$PROJECT_DIR$/app/scrapers/src/base.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/src/club_monaco.coffee" afterPath="$PROJECT_DIR$/app/scrapers/src/club_monaco.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/src/gap.coffee" afterPath="$PROJECT_DIR$/app/scrapers/src/gap.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/src/j_crew.coffee" afterPath="$PROJECT_DIR$/app/scrapers/src/j_crew.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/src/scraper.coffee" afterPath="$PROJECT_DIR$/app/scrapers/src/scraper.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/product_creator.rb" afterPath="$PROJECT_DIR$/app/services/product_creator.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/test.rb" afterPath="$PROJECT_DIR$/config/environments/test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/sizes.rb" afterPath="$PROJECT_DIR$/spec/factories/sizes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/t_shirts.rb" afterPath="$PROJECT_DIR$/spec/factories/t_shirts.rb" />
     </list>
     <ignored path="stylekick.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,10 +47,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alpha.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="alpha.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/size_type/alpha.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="29" selection-start="98" selection-end="98" vertical-scroll-proportion="0.08101266">
+            <state line="4" column="29" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="measurement.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/measurement.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="21" selection-start="992" selection-end="992" vertical-scroll-proportion="0.78740156">
               <folding />
             </state>
           </provider>
@@ -179,7 +128,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/models/product.rb" />
-        <option value="$PROJECT_DIR$/app/models/measurement.rb" />
         <option value="$PROJECT_DIR$/app/admin/measurements.rb" />
         <option value="$PROJECT_DIR$/app/scrapers/src/american_apparel.coffee" />
         <option value="$PROJECT_DIR$/app/scrapers/src/j_crew.coffee" />
@@ -194,6 +142,7 @@
         <option value="$PROJECT_DIR$/app/models/size_type/base.rb" />
         <option value="$PROJECT_DIR$/app/services/product_creator.rb" />
         <option value="$PROJECT_DIR$/app/models/size_type/alpha.rb" />
+        <option value="$PROJECT_DIR$/app/models/measurement.rb" />
       </list>
     </option>
   </component>
@@ -438,13 +387,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.fileTypes" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="preferences.fileTypes" />
     <property name="FullScreen" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -630,6 +579,15 @@
         <option name="RakeTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method>
+        <option name="RakeTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -661,15 +619,6 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
-      <method>
-        <option name="RakeTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
       <method>
         <option name="RakeTask" enabled="false" />
       </method>
@@ -851,17 +800,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="914" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28799018" sideWeight="0.51040393" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28799018" sideWeight="0.48102814" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29227942" sideWeight="0.3500612" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29227942" sideWeight="0.3231334" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3182898" sideWeight="0.9946581" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31823745" sideWeight="0.9946581" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -930,11 +879,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scrapers/src/american_apparel.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.03524229" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scrapers/src/j_crew.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="32" selection-start="83" selection-end="83" vertical-scroll-proportion="0.10084034" />
@@ -1009,7 +953,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/size_type/alpha.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="98" selection-end="98" vertical-scroll-proportion="0.08101266">
+        <state line="4" column="29" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/measurement.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="21" selection-start="992" selection-end="992" vertical-scroll-proportion="0.78740156">
           <folding />
         </state>
       </provider>
