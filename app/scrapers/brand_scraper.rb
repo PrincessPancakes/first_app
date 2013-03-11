@@ -16,9 +16,7 @@ class BrandScraper
 
   def scrape_product_by_url(url)
     begin
-      puts "Begin"
       product = scrape_product(url)
-      puts product.inspect
       update_product product
     rescue ScrapeError
       #add logging
@@ -57,7 +55,9 @@ class BrandScraper
   end
 
   def update_product(product)
-    @creator.create_or_update(product)
+    unless product["identifier"].nil? || product["name"].nil?
+      @creator.create_or_update(product)
+    end
   end
 end
 

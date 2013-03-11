@@ -10,7 +10,7 @@ FactoryGirl.define do
   #end
 
   factory :s_gap_t_shirt, parent: :product do |product|
-    product.size_type { |p| p.association(:alpha) }
+    product.size_type { "SizeType::Alpha" }
     product.category { |p| p.association(:t_shirts) }
     product.brand { |p| p.association(:gap) }
 
@@ -26,10 +26,9 @@ FactoryGirl.define do
   end
 
   factory :gap_t_shirt, parent: :product do |product|
-    product.size_type { |p| p.association(:alpha) }
+    product.size_type "SizeType::Alpha"
     product.category { |p| p.association(:t_shirts) }
     product.brand { |p| p.association(:gap) }
   end
-
 
 end

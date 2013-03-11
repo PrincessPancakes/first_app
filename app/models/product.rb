@@ -33,6 +33,10 @@ class Product < ActiveRecord::Base
     CategoryToMeasurementMapper.get_measurement_class(category.name)
   end
 
+  def size_type_class
+    size_type.constantize
+  end
+
   def first_group
     measurement_groups.first || measurement_groups.create!(description: "Regular")
   end

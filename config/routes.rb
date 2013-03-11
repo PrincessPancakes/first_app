@@ -1,4 +1,10 @@
 Stylekick::Application.routes.draw do
+  devise_for :users
+
+  resources :users do
+    resources :closet_items
+  end
+
   get "pages/index"
 
   ActiveAdmin.routes(self)

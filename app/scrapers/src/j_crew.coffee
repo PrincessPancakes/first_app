@@ -1,9 +1,7 @@
-class JCrewScraper
+#= require <base>
+
+class JCrewScraper extends Base
   constructor: (@casper, url) ->
-    #    casper.evaluate ->
-    #      cstmlnktrk.geotargetIPRerouteCA2US()
-    #    casper.then ->
-    #      casper.open url
 
   getName: ->
     document.querySelector('#pdp-title h1').textContent

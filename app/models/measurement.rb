@@ -22,6 +22,10 @@ class Measurement < ActiveRecord::Base
     measurement_group.product
   end
 
+  def size_options
+    product.size_type.constantize.options
+  end
+
   #def position
   #  size.position
   #end

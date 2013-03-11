@@ -1,6 +1,6 @@
 #= require <base>
 
-class GapScraper
+class GapScraper extends Base
   getName: ->
     productPage.objP.strProductStyleName
 
@@ -36,6 +36,8 @@ class GapScraper
 
   getCategory: ->
     productPage.objP.strProductType
+
+
 
   getMaterials: ->
     materials = []

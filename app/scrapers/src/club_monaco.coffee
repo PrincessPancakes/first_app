@@ -1,12 +1,16 @@
-class ClubMonacoScraper
-  constructor: (@casper, url) ->
-    #    casper.evaluate ->
-    #      cstmlnktrk.geotargetIPRerouteCA2US()
-    #    casper.then ->
-    #      casper.open url
+#= require <base>
 
-  goToUSSite: ->
-    cstmlnktrk.geotargetIPRerouteCA2US()
+class ClubMonacoScraper extends Base
+  constructor: (@casper, url) ->
+
+  goToUSSite: (url) ->
+    casper.evaluate ->
+      cstmlnktrk.geotargetIPRerouteCA2US()
+    casper.then ->
+      casper.open url
+
+  setup: (url) =>
+    @goToUSSite(url)
 
   getName: ->
     ess.product.p.title
@@ -17,7 +21,7 @@ class ClubMonacoScraper
 
     for variant in ess.product.p.colorSliceValues
       style = {
-      url: variant.mainImageURL
+      url: "http://www.clubmonaco.com" + variant.mainImageURL
       name: variant.colorName
       }
       styles.push style
@@ -41,6 +45,9 @@ class ClubMonacoScraper
 
   getBrand: ->
     "Club Monaco"
+
+  getGender: ->
+    document.querySelector('.breadcrumbs').children[1].textContent.replace("/ ", "").toLowerCase()
 
 
 

@@ -54,7 +54,7 @@ ActiveAdmin.register Measurement do
 
 
     f.inputs "Data" do
-      f.input :size, :as => :radio, :collection => SizeType::Alpha.options
+      f.input :size, :as => :radio, :collection => f.object.size_options
       #f.input :position
 
       link_to "testing", admin_root_path

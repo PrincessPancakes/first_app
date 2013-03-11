@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :size do
-    association :size_type
+    #association :size_type
     value "M"
     position 1
 

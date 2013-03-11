@@ -1,7 +1,11 @@
 class Base
+  setup: ->
+
+  getGender: ->
 
 
-class GapScraper
+
+class GapScraper extends Base
   getName: ->
     productPage.objP.strProductStyleName
 
@@ -85,6 +89,276 @@ class GapScraper
       links.push ("http://www.gap.com#{nodes[i].getAttribute('href')}")
     links
 
+#
+#class AmericanApparelScraper extends Base
+#  constructor: (@casper, url) ->
+#    #    casper.evaluate ->
+#    #      cstmlnktrk.geotargetIPRerouteCA2US()
+#    #    casper.then ->
+#    #      casper.open url
+#
+#  getName: ->
+#    document.querySelector('.name').innerHTML.replace("<br>", " ")
+#
+#  getStyles: ->
+#    styles = []
+#
+#    for variant in document.querySelectorAll('.productDetails .colors .color')
+#      style = {
+#      url: variant.getAttribute("data-productdetailsimagelarge")
+#      name: variant.getAttribute("data-name")
+#      }
+#      styles.push style
+#    styles
+#
+#  getMeasurementGroups: ->
+#    ["Regular"]
+#
+#  getIdentifier: ->
+#    document.querySelector('.code').textContent
+#
+#  getSizes: ->
+#    sizes = []
+#
+#    for size in document.querySelectorAll('.productDetails .sizes .size')
+#      sizes.push size.getAttribute('data-name')
+#
+#    sizes
+#
+#  getCategory: ->
+#    "unknown"
+#
+#  getMaterials: ->
+#    null
+#
+#  getBrand: ->
+#    "American Apparel"
+#
+#  categoryLinks: [
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33294',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33401',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33240',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33496',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33238'
+#  ]
+#
+#  getProductLinks: ->
+#    links = []
+#    nodes = document.querySelectorAll('.product a')
+#    for i in [0..nodes.length-1]
+#      links.push nodes[i].href
+#    links
+#
+#
+#class BananaRepublicScraper extends GapScraper
+#  getBrand: ->
+#    "Banana Republic"
+#
+#  categoryLinks: [
+#    'http://bananarepublic.gap.com/browse/category.do?cid=44866',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=79399',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=44873',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=44876',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=10894',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=80117',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=28660',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=14845',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=5040',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=43148',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=5037',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=5032',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=86858',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=67595',
+#    'http://bananarepublic.gap.com/browse/category.do?cid=5030'
+#  ]
+#
+#
+#class ClubMonacoScraper extends Base
+#  constructor: (@casper, url) ->
+#
+#  goToUSSite: (url) ->
+#    casper.evaluate ->
+#      cstmlnktrk.geotargetIPRerouteCA2US()
+#    casper.then ->
+#      casper.open url
+#
+#  setup: (url) =>
+#    @goToUSSite(url)
+#
+#  getName: ->
+#    ess.product.p.title
+#  #    document.querySelector('.product-title').textContent
+#
+#  getStyles: ->
+#    styles = []
+#
+#    for variant in ess.product.p.colorSliceValues
+#      style = {
+#      url: "http://www.clubmonaco.com" + variant.mainImageURL
+#      name: variant.colorName
+#      }
+#      styles.push style
+#    styles
+#
+#  getMeasurementGroups: ->
+#    ["Regular"]
+#
+#  getIdentifier: ->
+#    ess.GET.productId
+#  #    document.querySelector('.style').textContent
+#
+#  getSizes: ->
+#    Object.keys(ess.sizes)
+#
+#  getCategory: ->
+#    document.querySelector('.active-sub').text
+#
+#  getMaterials: ->
+#    null
+#
+#  getBrand: ->
+#    "Club Monaco"
+#
+#  getGender: ->
+#    document.querySelector('.breadcrumbs').children[1].textContent.replace("/ ", "").toLowerCase()
+#
+#
+#
+#  categoryLinks: [
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248126&size=99&cp=12243590.12266442.12454409.16248126&ab=ln_women_apparel_longsleeve',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248136&size=99&cp=12243590.12266442.12454409.16248136&ab=ln_women_apparel_shortsleeve',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248146&size=99&cp=12243590.12266442.12454409.16248146&ab=ln_women_apparel_sleeveless',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248266&size=99&cp=12243590.12266442.12454410.16248266&ab=ln_women_apparel_roundneck',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248286&size=99&cp=12243590.12266442.12454410.16248286&ab=ln_women_apparel_cardiganswraps',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248296&size=99&cp=12243590.12266442.12454410.16248296&ab=ln_women_apparel_cashmere',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12759982&size=99&cp=12243590.12266442.12454408.12759982&ab=ln_women_apparel_longsleeve',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12759981&size=99&cp=12243590.12266442.12454408.12759981&ab=ln_women_apparel_shortsleeve',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12759980&size=99&cp=12243590.12266442.12454408.12759980&ab=ln_women_apparel_tankscamis',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12754144&size=99&cp=12243590.12266442.12754144&ab=ln_women_apparel_pants'
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454432&size=99&cp=12243591.12280933.12454432&ab=ln_men_apparel_casualshirts',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454431&size=99&cp=12243591.12280933.12454431&ab=ln_men_apparel_dressshirts',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454392&size=99&cp=12243591.12280933.12454392&ab=ln_men_apparel_sweaters',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12770707&size=99&cp=12243591.12280933.12454389.12770707&ab=ln_men_apparel_polos',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454424&size=99&cp=12243591.12280933.12454389.12454424&ab=ln_men_apparel_shortsleeve',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=16247756&size=99&cp=12243591.12280933.12454389.16247756&ab=ln_men_apparel_longsleeve'
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454425&size=99&cp=12243591.12280933.12454425&ab=ln_men_apparel_sweatshirtssweatpants',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454397&size=99&cp=12243591.12280933.12454397&ab=ln_men_apparel_pants'
+#  ]
+#
+#  getProductLinks: ->
+#    links = []
+#    nodes = document.querySelectorAll('.product-details-a a')
+#    for i in [0..nodes.length-1]
+#      links.push nodes[i].href
+#    links
+
+
+#class JCrewScraper extends Base
+#  constructor: (@casper, url) ->
+#
+#  getName: ->
+#    document.querySelector('#pdp-title h1').textContent
+#
+#  getStyles: ->
+#    styles = []
+#
+#    for variant in document.querySelectorAll('#productColor0 option')
+#      if variant.value?
+#        style = {
+#        url: variant.getAttribute('mainimg')
+#        name: variant.textContent
+#        }
+#        styles.push style
+#    styles
+#
+#
+#  getMeasurementGroups: ->
+#    groups = []
+#    if document.querySelectorAll('.pdp-single').length > 0
+#      groups = ["Regular"]
+#    else
+#      for group in document.querySelectorAll('.pdp-shapes .shape-details .shape-name')
+#        groups.push group.textContent
+#    groups
+#
+#
+#  getIdentifier: ->
+#    id = null
+#    if document.querySelector('.itemid-single')?
+#      id = document.querySelector('.itemid-single').textContent.replace("item ", "")
+#    else if
+#    id = document.querySelector('.itemid').textContent.replace("item ", "")
+#    id
+#
+#
+#  getSizes: ->
+#    sizes = []
+#
+#    for size in document.querySelectorAll('#sizeSelect0 option')
+#      if size.value?
+#        sizes.push size.value
+#
+#    sizes
+#
+#  getCategory: ->
+#    cheetahTopCategoryID
+#
+#  getMaterials: ->
+#    null
+#
+#  getBrand: ->
+#    "J Crew"
+#
+#  getGender: ->
+#    cheetahTopCategoryName
+#
+#  categoryLinks: [
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33294',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33401',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33240',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33496',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33238'
+#  ]
+#
+#  getProductLinks: ->
+#    links = []
+#    nodes = document.querySelectorAll('.arrayCopy .arrayProdName a')
+#    for i in [0..nodes.length-1]
+#      links.push nodes[i].href
+#    links
+#
+
+
+
+
 
 
 name = ""
@@ -98,6 +372,7 @@ product = {}
 brand = ""
 scraper = null
 products = []
+gender = ""
 
 casper = require('casper').create(
   httpStatusHandlers: {
@@ -117,6 +392,8 @@ log = (message) ->
     casper.echo message
 
 scrapeProduct = (url, scraper) ->
+  scraper.setup(url)
+
   casper.then ->
     @open url
 
@@ -129,6 +406,7 @@ scrapeProduct = (url, scraper) ->
     sizes = @evaluate scraper.getSizes
     brand = @evaluate scraper.getBrand
     groups = @evaluate scraper.getMeasurementGroups
+    gender = @evaluate scraper.getGender
 
     product = {
       name: name
@@ -140,6 +418,7 @@ scrapeProduct = (url, scraper) ->
       materials: materials
       brand: brand
       url: url
+      gender: gender
     }
     log JSON.stringify(product)
     product

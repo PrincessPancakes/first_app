@@ -1,4 +1,6 @@
-class AmericanApparelScraper
+#= require <base>
+
+class AmericanApparelScraper extends Base
   constructor: (@casper, url) ->
     #    casper.evaluate ->
     #      cstmlnktrk.geotargetIPRerouteCA2US()

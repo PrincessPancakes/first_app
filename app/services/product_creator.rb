@@ -13,10 +13,12 @@ class ProductCreator
                                   name: attrs["name"],
                                   category: result[:category],
                                   gender: result[:gender],
+        #category: attrs["category"],
+        #gender: attrs["gender"],
                                   brand: brand,
                                   url: attrs["url"],
                                   status: "incomplete",
-                                  size_type: "SizeType::Alpha"#SizeType::Base.get_from_options(@output["sizes"]).to_s                               }
+                                  size_type: SizeType::Base.get_from_options(attrs["sizes"]).to_s
                               })
 
 
@@ -55,13 +57,16 @@ class ProductCreator
         "268" => build_hash("suit jackets", "men"),
         "269" => build_hash("suit pants", "men"),
         "279" => build_hash("vests", "men"),
-
         "260" => build_hash("t-shirts", "men"),
 
 
         "343" => build_hash("blouses", "women"),
         "384" => build_hash("sleeveless", "women"),
         "379" => build_hash("t-shirts", "women"),
+        "380" => build_hash("t-shirts", "women"),
+        "298" => build_hash("t-shirts", "women"),
+        "344" => build_hash("long sleeve", "women"),
+        "293" => build_hash("long sleeve", "women"),
         "396" => build_hash("sweaters", "women"),
         "292" => build_hash("blouses", "women")
     }

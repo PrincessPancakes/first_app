@@ -1,5 +1,8 @@
 #= require <gap>
-
+#= require <american_apparel>
+#= require <banana_republic>
+#= require <club_monaco>
+#= require <j_crew>
 
 name = ""
 identifier = ""
@@ -12,6 +15,7 @@ product = {}
 brand = ""
 scraper = null
 products = []
+gender = ""
 
 casper = require('casper').create(
   httpStatusHandlers: {
@@ -31,6 +35,8 @@ log = (message) ->
     casper.echo message
 
 scrapeProduct = (url, scraper) ->
+  scraper.setup(url)
+
   casper.then ->
     @open url
 
@@ -43,6 +49,7 @@ scrapeProduct = (url, scraper) ->
     sizes = @evaluate scraper.getSizes
     brand = @evaluate scraper.getBrand
     groups = @evaluate scraper.getMeasurementGroups
+    gender = @evaluate scraper.getGender
 
     product = {
       name: name
@@ -54,6 +61,7 @@ scrapeProduct = (url, scraper) ->
       materials: materials
       brand: brand
       url: url
+      gender: gender
     }
     log JSON.stringify(product)
     product
