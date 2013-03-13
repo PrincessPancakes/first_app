@@ -23,12 +23,8 @@ class Measurement < ActiveRecord::Base
   end
 
   def size_options
-    if product.size_type == "SizeType::Alpha"
-      SizeType::Alpha.options
-    elsif product.size_type == "SizeType::WomenNumeric"
-      SizeType::WomenNumeric.options
-    end
-    #product.size_type.constantize.options
+    klass = product.size_class
+    klass.options
   end
 
   #def position

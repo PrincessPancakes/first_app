@@ -8,6 +8,10 @@ class SizeType::Base
       return SizeType::Alpha
     elsif options.include?("4") || options.include?("8")
       return SizeType::WomenNumeric
+    elsif options.include?("32") || options.include?("36")
+      return SizeType::MenPants1D
+    elsif options.include?("32x32") || options.include?("32x34")
+      return SizeType::MenPants2D
     end
   end
 

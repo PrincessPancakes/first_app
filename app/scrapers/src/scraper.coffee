@@ -16,6 +16,7 @@ brand = ""
 scraper = null
 products = []
 gender = ""
+links = []
 
 casper = require('casper').create(
   httpStatusHandlers: {
@@ -64,39 +65,75 @@ scrapeProduct = (url, scraper) ->
       gender: gender
     }
     log JSON.stringify(product)
-    product
+  product
 
 
+
+scrapeMultipleProducts = (scraper, links) ->
+  casper.then ->
+    i = 0
+    casper.each links, (self, link) ->
+      if link?
+        unless debug && i > 5
+          @then ->
+            product = scrapeProduct(link, scraper)
+            i++
+            products.push product
+  products
 
 
 scrapeProductLinks = (scraper) ->
   log "Scraping product links"
 
+#  links = []
+#  casper.then ->
+#    casper.each scraper.categoryLinks, (self, link) ->
+##      temp = []
+#      @then ->
+#        log "Opening #{link}"
+#        @open link
+##      @then ->
+##        temp = @evaluate scraper.getProductLinks)
+##      links = links.concat(temp)
+#  log links
+#  links
   links = []
-  casper.each scraper.categoryLinks, (self, link) ->
-    @then ->
-      log "Opening #{link}"
-      @open link
-    @then ->
-      links = links.concat(@evaluate scraper.getProductLinks)
-
   casper.then ->
-    log "Product links scraped"
-    log links
+    casper.each scraper.categoryLinks, (self, link) ->
+      @then ->
+        log "Opening #{link}"
+        @open link
+      @then ->
+        links = links.concat(@evaluate scraper.getProductLinks)
+  links
 
+
+scrapeAll = (scraper) ->
+  links = []
   casper.then ->
-    i = 0
+    casper.each scraper.categoryLinks, (self, link) ->
+      @then ->
+        log "Opening #{link}"
+        @open link
+      @then ->
+        links = links.concat(@evaluate scraper.getProductLinks)
+  casper.then ->
     casper.each links, (self, link) ->
-      if !debug || i < 5
+      if link?
         @then ->
           product = scrapeProduct(link, scraper)
-          i++
           products.push product
+  products
 
 
 
+
+
+result = ""
+state = ""
 
 run = ->
+
   casper.start()
 
   if casper.cli.has("log")
@@ -108,17 +145,27 @@ run = ->
 
   if casper.cli.has("all") #scrape all products for the given brand
     log "All"
-    scrapeProductLinks(scraper)
+#    links = scrapeProductLinks(scraper)
+#    result = scrapeMultipleProducts(scraper, links)
+    result = scrapeAll(scraper)
+    state = "all"
+  else if casper.cli.has("links")
+    log "Links"
+    result = scrapeProductLinks(scraper)
+    state = "links"
   else if casper.cli.has("url")
     url = casper.cli.get("url").replace(/STYLEKICK/g , "&")
     log "Single product: #{url}"
-    scrapeProduct(url, scraper)
+    result = scrapeProduct(url, scraper)
+    state = "single"
 
 
   casper.run ->
-    if products.length > 1
+    if state == "all"
       @echo JSON.stringify(products)
-    else
+    else if state == "links"
+      @echo JSON.stringify(links)
+    else if state == "single"
       @echo JSON.stringify(product)
     @exit()
 

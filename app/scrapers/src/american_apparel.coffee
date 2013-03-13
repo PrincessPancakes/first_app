@@ -2,10 +2,6 @@
 
 class AmericanApparelScraper extends Base
   constructor: (@casper, url) ->
-    #    casper.evaluate ->
-    #      cstmlnktrk.geotargetIPRerouteCA2US()
-    #    casper.then ->
-    #      casper.open url
 
   getName: ->
     document.querySelector('.name').innerHTML.replace("<br>", " ")
@@ -29,10 +25,8 @@ class AmericanApparelScraper extends Base
 
   getSizes: ->
     sizes = []
-
     for size in document.querySelectorAll('.productDetails .sizes .size')
       sizes.push size.getAttribute('data-name')
-
     sizes
 
   getCategory: ->

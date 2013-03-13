@@ -1,7 +1,5 @@
 class Base
-  setup: ->
-
-  getGender: ->
+  setup: (url) ->
 
 
 
@@ -40,14 +38,71 @@ class GapScraper extends Base
     sizes
 
   getCategory: ->
-    productPage.objP.strProductType
+    cidMapper = {
+      "251": "long sleeve"
+      "248": "long sleeve"
+      "276": "t-shirts"
+      "260": "t-shirts"
+      "247": "dress shirts"
+      "259": "dress shirts"
+      "257": "casual shirts"
+      "252": "polos"
+      "273": "sweaters"
+      "245": "jackets"
+      "235": "blazers"
+      "268": "suit jackets"
+      "269": "suit pants"
+      "279": "vests"
+      "343": "blouses"
+      "384": "sleeveless"
+      "379": "t-shirts"
+      "380": "t-shirts"
+      "298": "t-shirts"
+      "344": "long sleeve"
+      "293": "long sleeve"
+      "396": "sweaters"
+      "292": "blouses"
+    }
+
+    cid = productPage.objP.strProductType
+    cidMapper[cid]
+
+
+  getGender: ->
+    cidMapper = {
+    "251": "men"
+    "248": "men"
+    "276": "men"
+    "260": "men"
+    "247": "men"
+    "259": "men"
+    "257": "men"
+    "252": "men"
+    "273": "men"
+    "245": "men"
+    "235": "men"
+    "268": "men"
+    "269": "men"
+    "279": "men"
+    "343": "women"
+    "384": "women"
+    "379": "women"
+    "380": "women"
+    "298": "women"
+    "344": "women"
+    "293": "women"
+    "396": "women"
+    "292": "women"
+    }
+    cid = productPage.objP.strProductType
+    cidMapper[cid]
 
   getMaterials: ->
     materials = []
     for fabric in productPage.objP.arrayFabricContent
       material = {
-      fabric: fabric.strName
-      percent: fabric.strPercent
+        fabric: fabric.strName
+        percent: fabric.strPercent
       }
       materials.push(material)
     materials
@@ -89,156 +144,155 @@ class GapScraper extends Base
       links.push ("http://www.gap.com#{nodes[i].getAttribute('href')}")
     links
 
-#
-#class AmericanApparelScraper extends Base
-#  constructor: (@casper, url) ->
-#    #    casper.evaluate ->
-#    #      cstmlnktrk.geotargetIPRerouteCA2US()
-#    #    casper.then ->
-#    #      casper.open url
-#
-#  getName: ->
-#    document.querySelector('.name').innerHTML.replace("<br>", " ")
-#
-#  getStyles: ->
-#    styles = []
-#
-#    for variant in document.querySelectorAll('.productDetails .colors .color')
-#      style = {
-#      url: variant.getAttribute("data-productdetailsimagelarge")
-#      name: variant.getAttribute("data-name")
-#      }
-#      styles.push style
-#    styles
-#
-#  getMeasurementGroups: ->
-#    ["Regular"]
-#
-#  getIdentifier: ->
-#    document.querySelector('.code').textContent
-#
-#  getSizes: ->
-#    sizes = []
-#
-#    for size in document.querySelectorAll('.productDetails .sizes .size')
-#      sizes.push size.getAttribute('data-name')
-#
-#    sizes
-#
-#  getCategory: ->
-#    "unknown"
-#
-#  getMaterials: ->
-#    null
-#
-#  getBrand: ->
-#    "American Apparel"
-#
-#  categoryLinks: [
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33294',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33401',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33240',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33496',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33238'
-#  ]
-#
-#  getProductLinks: ->
-#    links = []
-#    nodes = document.querySelectorAll('.product a')
-#    for i in [0..nodes.length-1]
-#      links.push nodes[i].href
-#    links
-#
-#
-#class BananaRepublicScraper extends GapScraper
-#  getBrand: ->
-#    "Banana Republic"
-#
-#  categoryLinks: [
-#    'http://bananarepublic.gap.com/browse/category.do?cid=44866',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=79399',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=44873',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=44876',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=10894',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=80117',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=28660',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=14845',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=5040',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=43148',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=5037',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=5032',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=86858',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=67595',
-#    'http://bananarepublic.gap.com/browse/category.do?cid=5030'
-#  ]
-#
-#
-#class ClubMonacoScraper extends Base
-#  constructor: (@casper, url) ->
-#
-#  goToUSSite: (url) ->
-#    casper.evaluate ->
-#      cstmlnktrk.geotargetIPRerouteCA2US()
-#    casper.then ->
-#      casper.open url
-#
-#  setup: (url) =>
-#    @goToUSSite(url)
-#
-#  getName: ->
-#    ess.product.p.title
-#  #    document.querySelector('.product-title').textContent
-#
-#  getStyles: ->
-#    styles = []
-#
-#    for variant in ess.product.p.colorSliceValues
-#      style = {
-#      url: "http://www.clubmonaco.com" + variant.mainImageURL
-#      name: variant.colorName
-#      }
-#      styles.push style
-#    styles
-#
-#  getMeasurementGroups: ->
-#    ["Regular"]
-#
-#  getIdentifier: ->
-#    ess.GET.productId
-#  #    document.querySelector('.style').textContent
-#
-#  getSizes: ->
-#    Object.keys(ess.sizes)
-#
-#  getCategory: ->
+
+class AmericanApparelScraper extends Base
+  constructor: (@casper, url) ->
+
+  getName: ->
+    document.querySelector('.name').innerHTML.replace("<br>", " ")
+
+  getStyles: ->
+    styles = []
+
+    for variant in document.querySelectorAll('.productDetails .colors .color')
+      style = {
+      url: variant.getAttribute("data-productdetailsimagelarge")
+      name: variant.getAttribute("data-name")
+      }
+      styles.push style
+    styles
+
+  getMeasurementGroups: ->
+    ["Regular"]
+
+  getIdentifier: ->
+    document.querySelector('.code').textContent
+
+  getSizes: ->
+    sizes = []
+    for size in document.querySelectorAll('.productDetails .sizes .size')
+      sizes.push size.getAttribute('data-name')
+    sizes
+
+  getCategory: ->
+    "unknown"
+
+  getMaterials: ->
+    null
+
+  getBrand: ->
+    "American Apparel"
+
+  categoryLinks: [
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33294',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33401',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33240',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33496',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33238'
+  ]
+
+  getProductLinks: ->
+    links = []
+    nodes = document.querySelectorAll('.product a')
+    for i in [0..nodes.length-1]
+      links.push nodes[i].href
+    links
+
+
+class BananaRepublicScraper extends GapScraper
+  getBrand: ->
+    "Banana Republic"
+
+  categoryLinks: [
+    'http://bananarepublic.gap.com/browse/category.do?cid=44866',
+    'http://bananarepublic.gap.com/browse/category.do?cid=79399',
+    'http://bananarepublic.gap.com/browse/category.do?cid=44873',
+    'http://bananarepublic.gap.com/browse/category.do?cid=44876',
+    'http://bananarepublic.gap.com/browse/category.do?cid=10894',
+    'http://bananarepublic.gap.com/browse/category.do?cid=80117',
+    'http://bananarepublic.gap.com/browse/category.do?cid=28660',
+    'http://bananarepublic.gap.com/browse/category.do?cid=14845',
+    'http://bananarepublic.gap.com/browse/category.do?cid=5040',
+    'http://bananarepublic.gap.com/browse/category.do?cid=43148',
+    'http://bananarepublic.gap.com/browse/category.do?cid=5037',
+    'http://bananarepublic.gap.com/browse/category.do?cid=5032',
+    'http://bananarepublic.gap.com/browse/category.do?cid=86858',
+    'http://bananarepublic.gap.com/browse/category.do?cid=67595',
+    'http://bananarepublic.gap.com/browse/category.do?cid=5030'
+  ]
+
+
+class ClubMonacoScraper extends Base
+  constructor: (@casper, url) ->
+
+  goToUSSite: (url) ->
+    casper.evaluate ->
+      cstmlnktrk.geotargetIPRerouteCA2US()
+    casper.then ->
+      casper.open url
+
+  setup: (url) =>
+    @goToUSSite(url)
+
+  getName: ->
+    ess.product.p.title
+  #    document.querySelector('.product-title').textContent
+
+  getStyles: ->
+    styles = []
+
+    for variant in ess.product.p.colorSliceValues
+      style = {
+      url: "http://www.clubmonaco.com" + variant.mainImageURL
+      name: variant.colorName
+      }
+      styles.push style
+    styles
+
+  getMeasurementGroups: ->
+    ["Regular"]
+
+  getIdentifier: ->
+    ess.GET.productId
+  #    document.querySelector('.style').textContent
+
+  getSizes: ->
+    Object.keys(ess.sizes)
+
+  getCategory: ->
 #    document.querySelector('.active-sub').text
-#
-#  getMaterials: ->
-#    null
-#
-#  getBrand: ->
-#    "Club Monaco"
-#
-#  getGender: ->
-#    document.querySelector('.breadcrumbs').children[1].textContent.replace("/ ", "").toLowerCase()
-#
-#
-#
-#  categoryLinks: [
+    c = document.querySelectorAll('li.active')
+    c[c.length-1].textContent.trim()
+
+  getGender: ->
+    document.querySelector('.breadcrumbs').children[1].textContent.replace("/ ", "").toLowerCase()
+
+
+  getMaterials: ->
+    null
+
+  getBrand: ->
+    "Club Monaco"
+
+
+
+
+
+  categoryLinks: [
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248126&size=99&cp=12243590.12266442.12454409.16248126&ab=ln_women_apparel_longsleeve',
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248136&size=99&cp=12243590.12266442.12454409.16248136&ab=ln_women_apparel_shortsleeve',
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=16248146&size=99&cp=12243590.12266442.12454409.16248146&ab=ln_women_apparel_sleeveless',
@@ -252,21 +306,21 @@ class GapScraper extends Base
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454432&size=99&cp=12243591.12280933.12454432&ab=ln_men_apparel_casualshirts',
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454431&size=99&cp=12243591.12280933.12454431&ab=ln_men_apparel_dressshirts',
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454392&size=99&cp=12243591.12280933.12454392&ab=ln_men_apparel_sweaters',
-#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12770707&size=99&cp=12243591.12280933.12454389.12770707&ab=ln_men_apparel_polos',
+#    'http://www.clubmonaco.com/family/index.jsp?categoryId=19748246&size=99&cp=12243591.12280933.19748246&ab=ln_men_apparel_polos',
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454424&size=99&cp=12243591.12280933.12454389.12454424&ab=ln_men_apparel_shortsleeve',
 #    'http://www.clubmonaco.com/family/index.jsp?categoryId=16247756&size=99&cp=12243591.12280933.12454389.16247756&ab=ln_men_apparel_longsleeve'
-#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454425&size=99&cp=12243591.12280933.12454425&ab=ln_men_apparel_sweatshirtssweatpants',
-#    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454397&size=99&cp=12243591.12280933.12454397&ab=ln_men_apparel_pants'
-#  ]
+    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454425&size=99&cp=12243591.12280933.12454425&ab=ln_men_apparel_sweatshirtssweatpants',
+    'http://www.clubmonaco.com/family/index.jsp?categoryId=12454397&size=99&cp=12243591.12280933.12454397&ab=ln_men_apparel_pants'
+  ]
+
+  getProductLinks: ->
+    links = []
+    nodes = document.querySelectorAll('.product-details-a a')
+    for i in [0..nodes.length-1]
+      links.push nodes[i].href
+    links
 #
-#  getProductLinks: ->
-#    links = []
-#    nodes = document.querySelectorAll('.product-details-a a')
-#    for i in [0..nodes.length-1]
-#      links.push nodes[i].href
-#    links
-
-
+#
 #class JCrewScraper extends Base
 #  constructor: (@casper, url) ->
 #
@@ -354,7 +408,7 @@ class GapScraper extends Base
 #    for i in [0..nodes.length-1]
 #      links.push nodes[i].href
 #    links
-#
+
 
 
 
@@ -373,6 +427,7 @@ brand = ""
 scraper = null
 products = []
 gender = ""
+links = []
 
 casper = require('casper').create(
   httpStatusHandlers: {
@@ -421,39 +476,75 @@ scrapeProduct = (url, scraper) ->
       gender: gender
     }
     log JSON.stringify(product)
-    product
+  product
 
 
+
+scrapeMultipleProducts = (scraper, links) ->
+  casper.then ->
+    i = 0
+    casper.each links, (self, link) ->
+      if link?
+        unless debug && i > 5
+          @then ->
+            product = scrapeProduct(link, scraper)
+            i++
+            products.push product
+  products
 
 
 scrapeProductLinks = (scraper) ->
   log "Scraping product links"
 
+#  links = []
+#  casper.then ->
+#    casper.each scraper.categoryLinks, (self, link) ->
+##      temp = []
+#      @then ->
+#        log "Opening #{link}"
+#        @open link
+##      @then ->
+##        temp = @evaluate scraper.getProductLinks)
+##      links = links.concat(temp)
+#  log links
+#  links
   links = []
-  casper.each scraper.categoryLinks, (self, link) ->
-    @then ->
-      log "Opening #{link}"
-      @open link
-    @then ->
-      links = links.concat(@evaluate scraper.getProductLinks)
-
   casper.then ->
-    log "Product links scraped"
-    log links
+    casper.each scraper.categoryLinks, (self, link) ->
+      @then ->
+        log "Opening #{link}"
+        @open link
+      @then ->
+        links = links.concat(@evaluate scraper.getProductLinks)
+  links
 
+
+scrapeAll = (scraper) ->
+  links = []
   casper.then ->
-    i = 0
+    casper.each scraper.categoryLinks, (self, link) ->
+      @then ->
+        log "Opening #{link}"
+        @open link
+      @then ->
+        links = links.concat(@evaluate scraper.getProductLinks)
+  casper.then ->
     casper.each links, (self, link) ->
-      if !debug || i < 5
+      if link?
         @then ->
           product = scrapeProduct(link, scraper)
-          i++
           products.push product
+  products
 
 
 
+
+
+result = ""
+state = ""
 
 run = ->
+
   casper.start()
 
   if casper.cli.has("log")
@@ -465,17 +556,27 @@ run = ->
 
   if casper.cli.has("all") #scrape all products for the given brand
     log "All"
-    scrapeProductLinks(scraper)
+#    links = scrapeProductLinks(scraper)
+#    result = scrapeMultipleProducts(scraper, links)
+    result = scrapeAll(scraper)
+    state = "all"
+  else if casper.cli.has("links")
+    log "Links"
+    result = scrapeProductLinks(scraper)
+    state = "links"
   else if casper.cli.has("url")
     url = casper.cli.get("url").replace(/STYLEKICK/g , "&")
     log "Single product: #{url}"
-    scrapeProduct(url, scraper)
+    result = scrapeProduct(url, scraper)
+    state = "single"
 
 
   casper.run ->
-    if products.length > 1
+    if state == "all"
       @echo JSON.stringify(products)
-    else
+    else if state == "links"
+      @echo JSON.stringify(links)
+    else if state == "single"
       @echo JSON.stringify(product)
     @exit()
 

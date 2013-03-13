@@ -7,6 +7,6 @@
 #end
 
 module SizeType
-  OPTIONS = %w(SizeType::Alpha SizeType::WomenNumeric)
-
+  OPTIONS = %w(SizeType::Alpha SizeType::WomenNumeric SizeType::MenPants1D SizeType::MenPants2D)
 end
+

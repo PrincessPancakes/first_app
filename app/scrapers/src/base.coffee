@@ -1,2 +1,2 @@
 class Base
-  setup: ->
+  setup: (url) ->

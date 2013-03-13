@@ -28,6 +28,9 @@ class Product < ActiveRecord::Base
 
   before_validation { status ||= "incomplete" }
 
+  def size_class
+    size_type.constantize
+  end
 
   def measurement_class
     CategoryToMeasurementMapper.get_measurement_class(category.name)

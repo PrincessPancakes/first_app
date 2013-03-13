@@ -35,16 +35,71 @@ class GapScraper extends Base
     sizes
 
   getCategory: ->
-    productPage.objP.strProductType
+    cidMapper = {
+      "251": "long sleeve"
+      "248": "long sleeve"
+      "276": "t-shirts"
+      "260": "t-shirts"
+      "247": "dress shirts"
+      "259": "dress shirts"
+      "257": "casual shirts"
+      "252": "polos"
+      "273": "sweaters"
+      "245": "jackets"
+      "235": "blazers"
+      "268": "suit jackets"
+      "269": "suit pants"
+      "279": "vests"
+      "343": "blouses"
+      "384": "sleeveless"
+      "379": "t-shirts"
+      "380": "t-shirts"
+      "298": "t-shirts"
+      "344": "long sleeve"
+      "293": "long sleeve"
+      "396": "sweaters"
+      "292": "blouses"
+    }
+
+    cid = productPage.objP.strProductType
+    cidMapper[cid]
 
 
+  getGender: ->
+    cidMapper = {
+    "251": "men"
+    "248": "men"
+    "276": "men"
+    "260": "men"
+    "247": "men"
+    "259": "men"
+    "257": "men"
+    "252": "men"
+    "273": "men"
+    "245": "men"
+    "235": "men"
+    "268": "men"
+    "269": "men"
+    "279": "men"
+    "343": "women"
+    "384": "women"
+    "379": "women"
+    "380": "women"
+    "298": "women"
+    "344": "women"
+    "293": "women"
+    "396": "women"
+    "292": "women"
+    }
+    cid = productPage.objP.strProductType
+    cidMapper[cid]
 
   getMaterials: ->
     materials = []
     for fabric in productPage.objP.arrayFabricContent
       material = {
-      fabric: fabric.strName
-      percent: fabric.strPercent
+        fabric: fabric.strName
+        percent: fabric.strPercent
       }
       materials.push(material)
     materials

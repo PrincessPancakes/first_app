@@ -1,18 +1,19 @@
 class CategoryToMeasurementMapper
   CATEGORY_TO_MEASUREMENT = {
       "t-shirts" => "TShirts",
-      "long sleeve" => "LongSleeve",
+      "polos" => "TShirts",
       "jeans" => "Pants",
+      "casual pants" => "Pants",
+      "suit pants" => "Pants",
       "sleeveless" => "Sleeveless",
+      "vests" => "Sleeveless",
       "dress shirts" => "LongSleeve",
       "casual shirts" => "LongSleeve",
-      "polos" => "TShirts",
       "sweaters" => "LongSleeve",
       "jackets" => "LongSleeve",
       "blazers" => "LongSleeve",
       "suit jackets" => "LongSleeve",
-      "suit pants" => "Pants",
-      "vests" => "Sleeveless",
+      "long sleeve" => "LongSleeve",
       "blouses" => "LongSleeve"
   }
 

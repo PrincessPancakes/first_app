@@ -47,7 +47,7 @@ class CasperJS
   end
 
   def scrape_all_products
-    `casperjs "#{scraper_file}" "#{@brand.camelize}" --all`
+    `casperjs "#{scraper_file}" "#{brand}" --all`
   end
 
   #we escape the url to prevent the & symbol from running casperjs as a background process

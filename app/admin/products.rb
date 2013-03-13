@@ -9,6 +9,7 @@ ActiveAdmin.register Product do
   filter :gender
   filter :category
   filter :brand
+  filter :name
 
   #collection_action :new, :method => :get do
   #  @size = Size.new
