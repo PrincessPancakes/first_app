@@ -2,16 +2,178 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6560852-5f5d-4e95-9dc8-3b5580a93cbc" name="Default" comment="Product model added&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/products.rb" afterPath="$PROJECT_DIR$/app/admin/products.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/category.rb" afterPath="$PROJECT_DIR$/app/models/category.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/category_mapper.rb" afterPath="$PROJECT_DIR$/app/models/category_mapper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/size_type/base.rb" afterPath="$PROJECT_DIR$/app/models/size_type/base.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/brand_scraper.rb" afterPath="$PROJECT_DIR$/app/scrapers/brand_scraper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/out.coffee" afterPath="$PROJECT_DIR$/app/scrapers/out.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scrapers/src/club_monaco.coffee" afterPath="$PROJECT_DIR$/app/scrapers/src/club_monaco.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/category_to_measurement_mapper.rb" afterPath="$PROJECT_DIR$/app/services/category_to_measurement_mapper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/pants_measurements.rb" afterPath="$PROJECT_DIR$/spec/factories/pants_measurements.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_0_0-2c6eee40e7d79c3a8358d8815da88232.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_0_0-4ac8d2ec0903f976433854078f46fb14.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_0_0-f9676a22cdbbeaa59a2edf75e9527b40.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_0_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_0_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_0_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_1_0-1b11b3305d883e3c93f27e98402f42a7.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_1_0-2c690c911612a45f23b5bd4c41198529.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_1_0-752f611ee495e5ce271b6dff37c10630.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_1_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_1_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_1_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_2_0-1d585b8f201de08db1e3a85dff1b2595.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_2_0-3b54fee8639fa703be37a2b5c7977ead.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_2_0-57e54165e899f8f6483bc2e0a352437a.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_2_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_2_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_2_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_3_0-0133330fd897f0bb6841ff3f751f68b3.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_3_0-4c91a5846efd38ba90f1b9b896175850.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_3_0-8b4048fc94a7768903c2f38eb025d264.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_3_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_3_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_3_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_4_0-6388197e611303dafc8e66b867907ed0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_4_0-71b9551a8c23096adfd6889f6f5dac0e.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_4_0-8f09b74d5004569b62e0ff8cb052045f.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_4_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_4_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_4_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_5_0-586b290f1a8d47957b02cc2de2a459c8.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_5_0-b9eeccfe762352c26fdf22a6ab36eff4.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_5_0-c4deb1778f8410426c9addfb77c80790.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_5_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_5_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_5_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_6_0-29717de9f7f6c14a8c0863a06fd21d16.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_6_0-3aa4f8b9a8827813086bff4931c299ab.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_6_0-8cf2e5377a3defb131d421cc0bf4ace0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_6_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_6_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_6_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_7_0-31dd1f96bbde99614aa269b7f3b90fc8.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_7_0-a581dcc3068f8e6de06be241390ed225.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_7_0-ae3d30507cb8e8319baff0cf3756fb85.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_7_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_7_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_7_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_8_0-0a8f5da1b16cbac9d57fd5b06c95eeb2.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_8_0-9885da53ce00dd7158465a80162b182e.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_8_0-b2ac87f2bb126bb64b8885f157b1481e.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_8_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_8_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_8_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_9_0-1f4dd1e6118c96cafd79c3723f36f0da.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_9_0-4c439c017d02a7a769adc7e3c3f9c7f9.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_9_0-f626e46d2a9fb6aac38fb00503e3c4c2.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_9_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_9_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_9_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_A_0-76c6e7638bb7845c78e171198e0715bc.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_A_0-8ad1f1295eb9b0ce7336e35d9615c5ca.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_A_0-d624915986d0d75be83d2580434dfa9e.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_A_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_A_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_A_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_B_0-560772442d3931d45f64a5b8ed7526bc.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_B_0-5681856a7949abbe26b374538490fd2f.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_B_0-6c314b1522e1d6398d01eec9c702582d.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_B_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_B_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_B_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_C_0-37ead9ecdecf31e3463f43a4a9a4fbc4.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_C_0-52351deb19ec7c5f7d76c6b343894631.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_C_0-a8090ffe6dd8e4cbafb10dfcaee7fe81.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_C_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_C_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_C_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_D_0-6fb597ecb8abc2eab6fd1d1581565123.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_D_0-d42f03d129a705ece7855a6e92bbca7d.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_D_0-fedcf273eaf7fb97d3cc8fb7f667c316.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_D_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_D_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_D_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_E_0-4cf9956ad332771d6e80ac437478e396.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_E_0-51ed38e666f0818553d9966595988113.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_E_0-ba8ace316ce5dfaba94aeba96420595f.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_E_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_E_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_E_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_F_0-485cf24b4718835d62e963295a74401d.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_F_0-9ab897c0ac15e1b55ab5afb42a080c80.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_F_0-a649f357d71832eadf421b2690ef7f70.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_F_0.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_F_0.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/237662_F_0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-046e282418b0902859cc78ecb7f01a7d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-046e282418b0902859cc78ecb7f01a7d.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-cbd64698613d68f6785dbf301703b900.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-cbd64698613d68f6785dbf301703b900.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/admin_notes_icon-04bd616ed9d1ff51d7a53422d4caf510.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/admin_notes_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-5a796ebfa33734f4a5bdc90346bb4ddc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-5a796ebfa33734f4a5bdc90346bb4ddc.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-header-bg-5f452fde9ca93c1fe7e9d47f0a3ece6a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-header-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-input-icon-876ae70b38bc880f91ce2315ed552260.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-input-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-next-link-icon-23a49449514d929cfc8c5c9b7c510d3b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-next-link-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-nipple-e13362aa148d84973a266eeee0b89e9a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-nipple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-prev-link-icon-43d0f297400cd14812abc8f7c6705d17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-prev-link-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/loading-38b99f1fc3078c0d0403fdf80e22f896.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow-dcb32755d9740e23965a1e76bb945ce9.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow_dark-f9fe6b6a563b7b15f3cd1be4e98d1ce0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow_dark.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/orderable-d9e1503253eff94adee978d6f43f2409.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/orderable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application-de3951344ec2c98e491b2ac9abc90edb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-3eeeb668e715b10d7f04efabdf230035.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-3eeeb668e715b10d7f04efabdf230035.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-73fa12eaf1b26c5e894601a446453ce1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-73fa12eaf1b26c5e894601a446453ce1.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-b2f906d2e74ccb8da9d706744936097e.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-b2f906d2e74ccb8da9d706744936097e.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/black-g-34036b9b36b578a31bdf44f34637d57c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/black-g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fb-ecf88230c156e41ef1edefa051518ed9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/g+-83c7e2cc6abd0edb66781035e80f145b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/g+.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/go-d84f927a2c58734f4e0559250a689078.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/go.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery.min-0633f0a59e3d0cd55ac3518f228b2893.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logo-beta-3311cde7159f5d732354593d1b951c36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logo-beta.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/manifest.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/rails-be8732dac73d845ac5b142c8fb5f9fb0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/rails.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/splash-1de0152420b3c7f80d1991b692ae5dfa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/splash-298b13119e9c0cdcc6a1d72f67ea693f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/splash.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/splash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter-d878b6e31819e807d6cb2efd6a55b68f.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/custom.modernizr-c6fb5ff476f4a52d405dac19a28cbb62.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/custom.modernizr-c6fb5ff476f4a52d405dac19a28cbb62.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/custom.modernizr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/custom.modernizr.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/zepto-1f5bb966ac56bb67285227fca6daf715.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/zepto-1f5bb966ac56bb67285227fca6daf715.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/zepto.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/zepto.js.gz" afterPath="" />
     </list>
     <ignored path="stylekick.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,15 +199,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pants_measurement.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/pants_measurement.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="9" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pants_measurements.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/factories/pants_measurements.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,10 +262,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category_to_measurement_mapper.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="category_to_measurement_mapper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/services/category_to_measurement_mapper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="44" selection-start="566" selection-end="566" vertical-scroll-proportion="0.33203632">
+            <state line="16" column="44" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -173,7 +335,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1680" />
-    <option name="height" value="917" />
+    <option name="height" value="914" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -263,7 +425,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylekick" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -686,14 +924,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="917" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="914" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2800245" sideWeight="0.26341462" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2800245" sideWeight="0.7280488" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2800245" sideWeight="0.2631579" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2800245" sideWeight="0.72827417" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -766,11 +1004,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="25" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/services/product_creator.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" />
@@ -843,7 +1076,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/services/category_to_measurement_mapper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="44" selection-start="566" selection-end="566" vertical-scroll-proportion="0.33203632">
+        <state line="16" column="44" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
