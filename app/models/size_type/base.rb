@@ -12,6 +12,8 @@ class SizeType::Base
       return SizeType::MenPants1D
     elsif options.include?("32x32") || options.include?("32x34")
       return SizeType::MenPants2D
+    else
+      return options
     end
   end
 

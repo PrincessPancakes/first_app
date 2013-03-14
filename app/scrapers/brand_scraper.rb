@@ -34,6 +34,17 @@ class BrandScraper
     end
   end
 
+  def update_unknown
+    unknown_category_products.each do |product|
+      begin
+        update_product(scrape_product(product.url))
+      rescue ScrapeError
+        #add logging
+      end
+    end
+  end
+
+
   private
 
   def get_links
@@ -58,6 +69,10 @@ class BrandScraper
     unless product["identifier"].nil? || product["name"].nil?
       @creator.create_or_update(product)
     end
+  end
+
+  def unknown_category_products
+    Category.unknown.products
   end
 end
 

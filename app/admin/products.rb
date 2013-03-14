@@ -10,6 +10,7 @@ ActiveAdmin.register Product do
   filter :category
   filter :brand
   filter :name
+  filter :size_type
 
   #collection_action :new, :method => :get do
   #  @size = Size.new
@@ -32,6 +33,7 @@ ActiveAdmin.register Product do
       link_to product.url, product.url
     end
     column :tags
+    column :size_type
 
     default_actions
 

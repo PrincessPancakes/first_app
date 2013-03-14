@@ -10,6 +10,7 @@ class CategoryToMeasurementMapper
       "dress shirts" => "LongSleeve",
       "casual shirts" => "LongSleeve",
       "sweaters" => "LongSleeve",
+      "cardigans" => "LongSleeve",
       "jackets" => "LongSleeve",
       "blazers" => "LongSleeve",
       "suit jackets" => "LongSleeve",

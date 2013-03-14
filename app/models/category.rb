@@ -7,6 +7,8 @@ class Category < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_inclusion_of :gender, in: %w( men women both )
 
+  has_many :products
+
   def self.unknown
     Category.find_by_name("unknown")
   end
