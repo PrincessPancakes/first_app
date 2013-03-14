@@ -1,0 +1,9 @@
+<% content_for :content do %>
+    <%= render partial: 'layouts/top_bar' %>
+    <div id='global_container'>
+        <%= yield %>
+    </div>
+<% end %>
+
+<%= render :template => 'layouts/application' %>
+

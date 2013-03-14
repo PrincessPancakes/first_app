@@ -6,6 +6,7 @@ Stylekick::Application.routes.draw do
   end
 
   get "pages/index"
+  get 'pages/onboarding'
 
   ActiveAdmin.routes(self)
 
