@@ -10,8 +10,6 @@ require_relative '../../app/scrapers/casper_js'
 
 
 describe CasperJS do
-
-
   subject do
     CasperJS.new("Gap").tap  do |c|
       stub(c).path{""}
@@ -21,19 +19,19 @@ describe CasperJS do
 
   describe "Successful scrape" do
     it "returns a parsed JSON object" do
-      stub(subject).run{'{"a":"b"}'}
+      stub(subject).scrape_product{'{"a":"b"}'}
       subject.scrape_url(url).must_equal({"a"=>"b"})
     end
   end
 
   describe "Scrape Error" do
-    it "raises an exception when there is a syntax" do
-      stub(subject).run{'SyntaxError: Parse error'}
+    it "raises an exception when there is a syntax error" do
+      stub(subject).scrape_product{'SyntaxError: Parse error'}
       proc{subject.scrape_url(url)}.must_raise ScrapeError
     end
 
     it "raises an exception when there is no data found" do
-      stub(subject).run{'Not found'}
+      stub(subject).scrape_product{'Not found'}
       proc{subject.scrape_url(url)}.must_raise ScrapeError
     end
   end

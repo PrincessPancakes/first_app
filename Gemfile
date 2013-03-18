@@ -6,7 +6,7 @@ gem 'rails', '3.2.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :test, :development do
   gem 'sqlite3'
-  gem "rspec-rails"
+
   gem 'minitest'
   gem 'rr'
   gem 'turn'
@@ -19,7 +19,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'jasminerice'
-  gem "mocha", "~> 0.12.8"
+  #gem "mocha", "~> 0.12.8"
 end
 
 
@@ -43,7 +43,6 @@ gem 'heroku'
 # Gemfile in Rails >= 3.1
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
-gem 'client_side_validations'
 gem 'casperjs'
 
 

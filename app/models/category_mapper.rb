@@ -11,7 +11,8 @@ class CategoryMapper
       "classic fit" => "casual shirts",
       "made in the usa" => "casual shirts",
       "tanks & camis" => "sleeveless",
-      "cardigans & wraps" => "cardigans"
+      "cardigans & wraps" => "cardigans",
+      "round neck" => "sweaters"
   }
 
   def self.map_category(category)

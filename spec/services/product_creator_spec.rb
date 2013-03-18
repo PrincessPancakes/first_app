@@ -33,7 +33,7 @@ describe ProductCreator do
 
     end
 
-    let(:response){{"name"=>"Striped PJ bottoms", "identifier"=>"248929", "category"=>"201072", "styles"=>[{"name"=>"blue stripe", "url"=>"http://www3.assets-gap.com/webcontent/0005/722/259/cn5722259.jpg"}], "groups"=>["Regular"], "sizes"=>["XS", "S", "M", "L", "XL", "XXL"], "materials"=>[{"fabric"=>"Cotton", "percent"=>"100.0"}], "brand"=>"Gap", "url" => "agdfg"}}
+    let(:response){{"name"=>"Striped PJ bottoms", "identifier"=>"248929", "category"=>"201072", "styles"=>[{"name"=>"blue stripe", "url"=>"http://www3.assets-gap.com/webcontent/0005/722/259/cn5722259.jpg"}], "groups"=>["Regular"], "sizes"=>["XS", "S", "M", "L", "XL", "XXL"], "materials"=>[{"fabric"=>"Cotton", "percent"=>"100.0"}], "brand"=>"Gap", "url" => "agdfg", "gender" => "men"}}
     it "creates a new entry when an existing one doesn't exist" do
       product = ProductCreator.create_or_update(response)
       Product.count.must_equal 1

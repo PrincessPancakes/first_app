@@ -42,15 +42,27 @@ scrapeProduct = (url, scraper) ->
     @open url
 
   casper.then ->
+    identifier = @evaluate scraper.getIdentifier
     name = @evaluate scraper.getName
     styles = @evaluate scraper.getStyles
-    category = @evaluate scraper.getCategory
+  casper.then ->
+    scraper.beforeCategory()
+  casper.then ->
+    category = @evaluate(scraper.getCategory, identifier)
+  casper.then ->
+    scraper.afterCategory(url)
+  casper.then ->
     materials = @evaluate scraper.getMaterials
-    identifier = @evaluate scraper.getIdentifier
+
     sizes = @evaluate scraper.getSizes
     brand = @evaluate scraper.getBrand
     groups = @evaluate scraper.getMeasurementGroups
+  casper.then ->
+    scraper.beforeGender(identifier)
+  casper.then ->
     gender = @evaluate scraper.getGender
+  casper.then ->
+    scraper.afterGender(url)
 
     product = {
       name: name

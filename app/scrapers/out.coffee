@@ -1,6 +1,16 @@
 class Base
   setup: (url) ->
 
+  beforeGender: ->
+  afterGender: (url) ->
+
+
+  beforeCategory: ->
+  afterCategory: (url) ->
+
+  returnToUrl: (url) ->
+    casper.then ->
+      casper.open url
 
 
 class GapScraper extends Base
@@ -174,8 +184,82 @@ class AmericanApparelScraper extends Base
       sizes.push size.getAttribute('data-name')
     sizes
 
-  getCategory: ->
+
+  findPage: (id) ->
+    document.querySelector("#imgGrid_#{id}")
+
+  beforeCategory: =>
+    log "Before category"
+
+    identifier = casper.evaluate @getIdentifier
+    log "#{identifier}"
+
+    page = null
+    pages = @categoryLinks
+    findPage = @findPage
+    casper.then ->
+      casper.each pages, (self, link) ->
+
+        casper.then ->
+          log "Opening #{link}"
+          casper.open link
+        casper.then ->
+          if casper.evaluate(findPage, identifier)
+            log "found product on page"
+            page = link
+            log "found on category page: #{page}"
+          else
+            log "Did not find product on page"
+    casper.then ->
+      log "Opening found category page: #{page}"
+      casper.open page
+
+  getCategory: (id) ->
     "unknown"
+    n = document.querySelector("#imgGrid_#{id}").parentNode.parentNode.parentNode
+    found = false
+    while(!found)
+      n = n.previousSibling
+      if(n.className=="sectionLabel")
+        found=true
+    n.textContent.trim()
+
+#    found=false;while(!found){n = n.previousSibling; if(n.className=="sectionLabel"){found=true}}; n.textContent.trim();
+
+  afterCategory: (url) ->
+    @returnToUrl(url)
+
+  beforeGender: (id) ->
+    casper.then ->
+      @evaluate ->
+        document.querySelector('#search').value = id
+    casper.then ->
+      @click '.search .button'
+
+  getGender: ->
+    filters = document.querySelectorAll('.searchFilters a')
+    men = false
+    women = false
+
+    for filter in filters
+      if filter.textContent.trim().substring(0,3) == "Men"
+        men = true
+      else if filter.textContent.trim().substring(0,5) == "Women"
+        women = true
+
+    if men and women
+      return "unisex"
+    else if men
+      return "men"
+    else if women
+      return "women"
+    else
+      "unknown"
+#    document.querySelectorAll('.breadCrumbs a')[1].textContent
+
+  after_gender: (url) =>
+    casper.then ->
+      casper.open url
 
   getMaterials: ->
     null
@@ -184,24 +268,24 @@ class AmericanApparelScraper extends Base
     "American Apparel"
 
   categoryLinks: [
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33294',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33401',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33294',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33401',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
     'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33240',
     'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33496',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
-    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
+#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
     'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33238'
   ]
 
@@ -319,95 +403,99 @@ class ClubMonacoScraper extends Base
     for i in [0..nodes.length-1]
       links.push nodes[i].href
     links
-#
-#
-#class JCrewScraper extends Base
-#  constructor: (@casper, url) ->
-#
-#  getName: ->
-#    document.querySelector('#pdp-title h1').textContent
-#
-#  getStyles: ->
-#    styles = []
-#
-#    for variant in document.querySelectorAll('#productColor0 option')
-#      if variant.value?
-#        style = {
-#        url: variant.getAttribute('mainimg')
-#        name: variant.textContent
-#        }
-#        styles.push style
-#    styles
-#
-#
-#  getMeasurementGroups: ->
-#    groups = []
-#    if document.querySelectorAll('.pdp-single').length > 0
-#      groups = ["Regular"]
-#    else
-#      for group in document.querySelectorAll('.pdp-shapes .shape-details .shape-name')
-#        groups.push group.textContent
-#    groups
-#
-#
-#  getIdentifier: ->
-#    id = null
-#    if document.querySelector('.itemid-single')?
-#      id = document.querySelector('.itemid-single').textContent.replace("item ", "")
-#    else if
-#    id = document.querySelector('.itemid').textContent.replace("item ", "")
-#    id
-#
-#
-#  getSizes: ->
-#    sizes = []
-#
-#    for size in document.querySelectorAll('#sizeSelect0 option')
-#      if size.value?
-#        sizes.push size.value
-#
-#    sizes
-#
-#  getCategory: ->
-#    cheetahTopCategoryID
-#
-#  getMaterials: ->
-#    null
-#
-#  getBrand: ->
-#    "J Crew"
-#
-#  getGender: ->
-#    cheetahTopCategoryName
-#
-#  categoryLinks: [
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33294',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33401',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33240',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33496',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
-#    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33238'
-#  ]
-#
-#  getProductLinks: ->
-#    links = []
-#    nodes = document.querySelectorAll('.arrayCopy .arrayProdName a')
-#    for i in [0..nodes.length-1]
-#      links.push nodes[i].href
-#    links
+
+
+class JCrewScraper extends Base
+  constructor: (@casper, url) ->
+
+  getName: ->
+    document.querySelector('#pdp-title h1').textContent
+
+  setup: (url) ->
+    casper.evaluate ->
+      closeWelMatPopUp()
+
+  getStyles: ->
+    styles = []
+
+    for variant in document.querySelectorAll('#productColor0 option')
+      if variant.value?
+        style = {
+        url: variant.getAttribute('mainimg')
+        name: variant.textContent
+        }
+        styles.push style
+    styles
+
+
+  getMeasurementGroups: ->
+    groups = []
+    if document.querySelectorAll('.pdp-single').length > 0
+      groups = ["Regular"]
+    else
+      for group in document.querySelectorAll('.pdp-shapes .shape-details .shape-name')
+        groups.push group.textContent
+    groups
+
+
+  getIdentifier: ->
+    id = null
+    if document.querySelector('.itemid-single')?
+      id = document.querySelector('.itemid-single').textContent.replace("item ", "")
+    else
+      id = document.querySelector('.itemid').textContent.replace("item ", "")
+    id
+
+
+  getSizes: ->
+    sizes = []
+
+    for size in document.querySelectorAll('#sizeSelect0 option')
+      if size.value?
+        sizes.push size.value
+
+    sizes
+
+  getCategory: ->
+    cheetahTopCategoryID
+
+  getMaterials: ->
+    null
+
+  getBrand: ->
+    "J Crew"
+
+  getGender: ->
+    cheetahTopCategoryName
+
+  categoryLinks: [
+    'http://www.jcrew.com/mens_category/shirts.jsp?iNextCategory=-1',
+    'http://www.jcrew.com/mens_category/sweaters.jsp',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33306',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33490',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33209',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33247',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33284',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33194',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33232',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33188',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33240',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33496',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33242',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33205',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33202',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33277',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33174',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33192',
+    'http://store.americanapparel.net/subCategory/index.jsp?subCatId=cat33238'
+  ]
+
+  getProductLinks: ->
+    links = []
+    nodes = document.querySelectorAll('.arrayCopy .arrayProdName a')
+    for i in [0..nodes.length-1]
+      links.push nodes[i].href
+    links
 
 
 
@@ -453,15 +541,27 @@ scrapeProduct = (url, scraper) ->
     @open url
 
   casper.then ->
+    identifier = @evaluate scraper.getIdentifier
     name = @evaluate scraper.getName
     styles = @evaluate scraper.getStyles
-    category = @evaluate scraper.getCategory
+  casper.then ->
+    scraper.beforeCategory()
+  casper.then ->
+    category = @evaluate(scraper.getCategory, identifier)
+  casper.then ->
+    scraper.afterCategory(url)
+  casper.then ->
     materials = @evaluate scraper.getMaterials
-    identifier = @evaluate scraper.getIdentifier
+
     sizes = @evaluate scraper.getSizes
     brand = @evaluate scraper.getBrand
     groups = @evaluate scraper.getMeasurementGroups
+  casper.then ->
+    scraper.beforeGender(identifier)
+  casper.then ->
     gender = @evaluate scraper.getGender
+  casper.then ->
+    scraper.afterGender(url)
 
     product = {
       name: name

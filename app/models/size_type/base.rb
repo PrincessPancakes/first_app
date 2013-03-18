@@ -4,7 +4,7 @@ class SizeType::Base
   end
 
   def self.get_from_options(options)
-    if options.include?("XL") || options.include?("M")
+    if options.include?("XL") || options.include?("M")  || options.include?("SMALL")
       return SizeType::Alpha
     elsif options.include?("4") || options.include?("8")
       return SizeType::WomenNumeric
@@ -18,18 +18,20 @@ class SizeType::Base
   end
 
   def self.smaller_size(size)
+    options[index - 1] if has_smaller_size?(size)
+  end
+
+  def self.has_smaller_size?(size)
     index = options.index(size)
-    if index.present? && index >= 1
-      return options[index - 1]
-    end
-    nil
+    index.present? && index >= 1
   end
 
   def self.larger_size(size)
+    options[index + 1] if has_larger_size?(size)
+  end
+
+  def self.has_larger_size?(size)
     index = options.index(size)
-    if index.present? && index < options.length - 1
-      return options[index + 1]
-    end
-    nil
+    index.present? && index < options.length - 1
   end
 end

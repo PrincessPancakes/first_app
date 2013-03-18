@@ -1,5 +1,6 @@
 require_relative 'scrape_error'
 require 'json'
+require 'active_support/inflector'
 
 class CasperJS
 
@@ -12,7 +13,6 @@ class CasperJS
 
     begin
       response = scrape_product
-      puts response.inspect
       JSON.parse(response)
     rescue JSON::ParserError
       #puts response.inspect
