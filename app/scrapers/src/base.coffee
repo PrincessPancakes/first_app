@@ -11,3 +11,5 @@ class Base
   returnToUrl: (url) ->
     casper.then ->
       casper.open url
+
+  getSizeChart: (id) ->

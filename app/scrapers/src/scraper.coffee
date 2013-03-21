@@ -3,6 +3,8 @@
 #= require <banana_republic>
 #= require <club_monaco>
 #= require <j_crew>
+#= require <uniqlo>
+#= require <zara>
 
 name = ""
 identifier = ""
@@ -45,6 +47,7 @@ scrapeProduct = (url, scraper) ->
     identifier = @evaluate scraper.getIdentifier
     name = @evaluate scraper.getName
     styles = @evaluate scraper.getStyles
+#    styles = scraper.getStyles
   casper.then ->
     scraper.beforeCategory()
   casper.then ->
@@ -53,7 +56,6 @@ scrapeProduct = (url, scraper) ->
     scraper.afterCategory(url)
   casper.then ->
     materials = @evaluate scraper.getMaterials
-
     sizes = @evaluate scraper.getSizes
     brand = @evaluate scraper.getBrand
     groups = @evaluate scraper.getMeasurementGroups
@@ -63,6 +65,8 @@ scrapeProduct = (url, scraper) ->
     gender = @evaluate scraper.getGender
   casper.then ->
     scraper.afterGender(url)
+  casper.then ->
+    data = scraper.getSizeChart(identifier)
 
     product = {
       name: name
