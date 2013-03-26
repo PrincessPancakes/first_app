@@ -41,5 +41,9 @@ class PagesController < ApplicationController
 
   end
 
+  def have_popup
+    render layout: false
+  end
+
 
 end

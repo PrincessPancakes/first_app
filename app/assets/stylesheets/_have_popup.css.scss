@@ -1,0 +1,89 @@
+/*Zurb Grid defaults */ 
+
+$last-column: false;
+$center: false;
+$offset: .25;
+$push: false;
+$pull: false;
+$collapse: false;
+$float: false;
+
+
+.new_product {
+	$columns: 2.2;
+	$float: left;
+	@include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+	border: #aaa 1px dashed; /*erase this*/
+	padding-bottom: 30px;
+}
+
+#new_product_name {
+	font-size:small;
+	height: 20px;
+	margin-top: 10px;
+}
+
+.new_product_image {
+	height:230px;
+	width:172px;
+	float:left;
+	border: #aaa 1px solid;
+}
+
+.new_product_sizes {
+	font-size:small;
+	border: #aaa 1px solid;
+	height:25px;
+	width:172px;
+	margin-top: 10px;
+}
+
+#add_button {	
+	background:#000;
+	float:right;
+	height: 28px;
+	width:82px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    margin-top:14px;
+    color:white;
+    font-size:small;
+    padding-left:26px;
+    padding-top:8px;
+}
+
+.grid_container {
+	$float: left;
+	$columns: 3.5;
+	@include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
+	margin-top: 30px;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+}
+
+ul.thumbnail_grid {
+	border: #aaa 1px dashed; /*erase this*/
+
+	li{
+		display: inline;
+list-style-type: none;
+	
+	}
+}
+
+.popup_thumbnail {
+	height:150px;
+	width:99px;
+
+	img{
+		height:150px;
+		width:99px;	
+		border: #aaa 1px solid;
+	}
+}
+
+
+

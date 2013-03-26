@@ -7,6 +7,8 @@ Stylekick::Application.routes.draw do
 
   get "pages/index"
   get 'pages/onboarding'
+  get 'pages/comparison'
+  get 'pages/have_popup'
 
   ActiveAdmin.routes(self)
 

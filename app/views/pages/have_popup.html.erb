@@ -1,0 +1,53 @@
+<head>
+  <title>Stylekick</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+	<div class="new_product"><!--Left hand side of page identifying target item-->
+		<div id="new_product_name"> Name
+		</div>
+
+		<div class="new_product_image">
+			<%= image_tag "popup_new_product.png" %>
+
+		</div>
+
+		<div class="new_product_sizes">
+		Size <!--To be changed to dropdown-->
+		</div>
+
+
+		<div id="action_button_container">
+				<div id="add_button">
+					ADD+
+				</div>
+		</div>
+
+	</div>
+
+	<div class="grid_container">
+	<ul class="thumbnail_grid">
+		<li class="popup_thumbnail">
+				<%= image_tag "popup_thumbnail.png" %>
+		</li>
+		<li class="popup_thumbnail">
+				<%= image_tag "popup_thumbnail.png" %>
+		</li> 
+		<li class="popup_thumbnail">
+				<%= image_tag "popup_thumbnail.png" %>
+		</li> 
+		<li class="popup_thumbnail">
+				<%= image_tag "popup_thumbnail.png" %>
+		</li>  
+    </ul>
+	</div>
+
+						
+</body>
+
+
