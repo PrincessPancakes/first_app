@@ -1,0 +1,94 @@
+<head>
+  <title>Stylekick</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+
+<div class="global_container">
+
+
+	<div class="top_bar">
+	</div>
+
+	<div class="logo_container">
+		<div class="logo_beta">
+			<%= image_tag "logo-beta.png" %>
+		</div>
+	</div>
+
+	<div id="search_container">
+		<div id="search_image">
+			<%= image_tag "woman_shopping.png" %>
+		</div>
+		<div id="splash2_sign_up_search">
+			<div id="search_button">
+				<%= image_tag "search_button.png", width:75 %>
+			</div>
+				<div id="sign_up_search_content">
+					<div id="sign_up_search_header">
+						SEARCH
+					</div>
+					<div id="sign_up_search_details">
+						Shop for clothes that fit the way you want
+					</div>
+				</div>
+		</div>	
+	</div>
+
+	<div id="compare_container">
+		<div id="compare_image">
+			<%= image_tag "woman_holding_dresses.png" %>
+		</div>
+		<div id="sign_up_compare">
+				<div id="compare_button">
+					<%= image_tag "compare_button.png", width:75 %>
+				</div>
+					<div id="sign_up_compare_content">
+						<div id="sign_up_compare_header">
+							COMPARE
+						</div>
+						<div id="sign_up_compare_details">
+							Reference the fit of clothes you love to those you want
+						</div>
+					</div>
+				</div>	
+	</div>
+
+	<div id="add_container">
+		<div id="add_image">
+			<%= image_tag "clothes_in_closet.png" %>
+		</div>
+			<div id="sign_up_add">
+				<div id="search_button">
+					<%= image_tag "add_button.png", width:75 %>
+				</div>
+					<div id="sign_up_add_content">
+						<div id="sign_up_add_header">
+							ADD
+						</div>
+						<div id="sign_up_add_details">
+							Keep track of the clothes you own
+						</div>
+					</div>
+				</div>
+	</div> 
+
+	<div id="login_signup">
+
+			<div id="signup_button">
+				SIGN UP
+			</div>
+
+			<div id="login_button">
+				LOG IN
+			</div>
+
+	</div>
+
+</div>
+</body>

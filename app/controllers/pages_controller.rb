@@ -49,4 +49,8 @@ class PagesController < ApplicationController
     render layout: false
   end
 
+  def _splash2
+    render layout: false
+  end
+
 end

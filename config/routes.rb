@@ -10,6 +10,7 @@ Stylekick::Application.routes.draw do
   get 'pages/comparison'
   get 'pages/have_popup'
   get 'pages/_splash1'
+  get 'pages/_splash2'
 
   ActiveAdmin.routes(self)
 
