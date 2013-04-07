@@ -9,7 +9,7 @@ $collapse: false;
 $float: false;
 
 .global_container {
-	width: 100%;
+	width: 940;
 }
 
 .top_bar {
@@ -32,16 +32,19 @@ $float: false;
 }
 
 
-#search_container {
+#splash2_search_container {
 	$columns: 4;
 	$float: left;
 	@include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
 	margin-left: 0px;
 	margin-top: 100px;
+	width: 300px;
+	margin-top: 65px;
+	margin-right: 0px;
 }
 
-#search_image {
-	width: 61%;
+#splash2_search_image,#splash2_compare_image,#splash2_add_image  {
+	width: 252px;
 	border-top: #000000 5px solid;
 	border-bottom: #000000 10px solid;
 	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
@@ -49,68 +52,72 @@ $float: false;
 	box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
-#search_button {
+#splash2_search_button,#splash2_compare_button,#splash2_add_button  {
 	background-color: #000000;
 	width: 75px;
 	height: 74px;
 	border-radius: 0 0 10 10;
+	float: left;
 }
 
-#compare_container {
+#splash2_search_content,#splash2_compare_content,#splash2_add_content {
+	float:left;
+	padding-top: 10px;
+	width: 150px;
+	padding-left: 15px;
+}
+
+#splash2_search_header,#splash2_compare_header,#splash2_add_header {
+	font-size: x-large;
+}
+
+#splash2_search_details,#splash2_compare_details,#splash2_add_details  {
+	font-size: small;
+	border-top: #aaa 1px solid;
+}
+
+#splash2_compare_container {
 	$columns: 4;
 	$float: left;
 	@include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
-	margin-left: 0px;
-	margin-top: 100px;
+	width: 300px;
+	margin-top: 65px;
 }
 
-#compare_image {
-	width: 61%;
-	border-top: #000000 5px solid;
-	border-bottom: #000000 10px solid;
-	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-	box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-}
 
-#compare_button {
-	background-color: #000000;
-	width: 75px;
-	height: 74px;
-	border-radius: 0 0 10 10;
-}
-
-#sign_up_search_content {
-	padding-top: 0px
-}
-
-#add_container {
+#splash2_add_container {
 	$columns: 4;
 	$float: right;
 	@include grid-column($columns, $last-column, $center, $offset, $push, $pull, $collapse, $float);
 	margin-left: 0px;
 	margin-top: 100px;
-}
-
-#add_image {
-	width: 61%;
-	border-top: #000000 5px solid;
-	border-bottom: #000000 10px solid;
-	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-	box-shadow: 1px 2px 3px rgba(0,0,0,.5);
-}
-
-#add_button {
-	background-color: #000000;
-	width: 75px;
-	height: 74px;
-	border-radius: 0 0 10 10;
+	width: 300px;
+	margin-top: 65px;
 }
 
 
-#login_signup {
-	position: relative;
+#splash2_signup_button {
 	float: right;
-	height: 50px;
+	border: #aaa 1px solid;
+	margin-right: 20px;
+	margin-top: 50px;
+	font-size: large;
+	height: 40px;
+	width: 120px;
+	padding-top:10px;
+	padding-left: 20px;
+	background-image: url('background_shading_small.png');
+}
+
+#splash2_login_button {
+	float: right;
+	border: #aaa 1px solid;
+	margin-right: 20px;
+	margin-top: 50px;
+	font-size: large;
+	height: 40px;
+	width: 120px;
+	padding-top:10px;
+	padding-left: 25px;
+	background-image: url('background_shading_small.png');
 }
