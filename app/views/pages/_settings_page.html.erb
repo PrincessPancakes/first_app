@@ -1,0 +1,108 @@
+<head>
+  <title>Stylekick</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+
+<div id="global_container">
+
+	<div id="account_settings">
+		<h1> Account Settings </h1>
+		Questions? Send us an email at info@stylekick.com
+	</div>
+
+	<div id="controllers">
+
+		<div id="profile_picture_row">
+			<div id="profile_picture_label">
+				Picture
+			</div>
+			<div id="profile_picture_tools">
+				<div id="profile_picture_thumbnail">
+				</div>
+				<div id="profile_picture_triggers">
+				<ul>
+					<li>Change picture</li>
+					<li>Delete picture</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+
+		<div id="full_name_row">
+			<div id="full_name_label">
+				Full Name
+			</div>
+			<div id="full_name_textbox">
+				<input type="text" name="full_name">
+			</div>
+		</div>
+		
+		<div id="username_row">
+			<div id="username_label">
+				Username
+			</div>
+			<div id="username_textbox">
+				<input type="text" name="full_name">
+			</div>
+		</div>
+
+		<div id="email_row">
+			<div id="email_label">
+				Email
+			</div>
+			<div id="email_textbox">
+				<input type="text" name="full_name">
+			</div>
+		</div>
+
+		<div id="change_password_row">
+			<div id="change_password_label">
+				Change Password
+			</div>
+			<div id="password_textbox">
+				<input type="text" name="old_password">
+				<input type="text" name="new_password">
+				<input type="text" name="verify_password">
+			</div>
+		</div>
+
+		<div id="location_row">
+			<div id="location_label">
+				Location
+			</div>
+			<div id="location_textbox">
+				<input type="text" name="full_name">
+			</div>
+		</div>
+		
+
+		<div id="social_network_row">
+			<div id="social_network_label">
+				Social Network
+			</div>
+			<div id="social_network_checkbox">
+				<input type="checkbox" name="subscribe_svpply_newsletter" value="1" checked="checked" id="subscribe_svpply_newsletter">
+				Invite friends from Facebook
+			</div>
+		</div>
+
+		<div id="save_settings">
+			<button>Save Settings</button>
+			<div style="clear: both"></div>
+		</div>
+
+		<div style="clear: both"></div>
+
+	</div>
+
+
+
+</div>
+
+</body>

@@ -11,6 +11,7 @@ Stylekick::Application.routes.draw do
   get 'pages/have_popup'
   get 'pages/_splash1'
   get 'pages/_splash2'
+  get 'pages/_settings_page'
 
   ActiveAdmin.routes(self)
 

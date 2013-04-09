@@ -53,4 +53,8 @@ class PagesController < ApplicationController
     render layout: false
   end
 
+  def _settings_page
+    
+  end
+    
 end
