@@ -1,0 +1,72 @@
+<head>
+  <title>Stylekick</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+	<div id="global_container">
+
+
+		<div id="log_in_bar">
+			<ul>
+				<li>Log In</li>
+			</ul>
+		</div>
+
+		<div id="cover_photo">
+			<%= image_tag "home_page_logo.png"%>
+			<div id="social_icons">
+			</div>
+		</div>
+
+
+			<div id="home_description">
+				<div id="home_header">
+					<h2>Shop the brands you love</h2>
+					<h2>using the fit you know</h2>
+					<h4>How does Stylekick work?</h4>
+				</div>
+				<div id="first_step">
+					<div id="plus_sign_icon">
+						<%= image_tag "plus_sign_black.png" %>
+					</div>
+					<div id="first_step_description">
+						Click have to add to your profile and directly compare this item to others you are considering purchasing. 
+					</div>
+			    </div>
+
+			    <div id="second_step">
+					<div id="search_icon">
+						<%= image_tag "search_sign_black.png" %>
+					</div>
+					<div id="second_step_description">
+						Stylekick will provide the specific differences between the two. ie.the sleeves are a bit shorter, waist is a bit tighter, but everything else is the same
+					</div>
+			    </div>
+
+			       <div id="third_step">
+						<div id="arrows_icon">
+							<%= image_tag "compare_sign_black.png" %>
+						</div>
+						<div id="third_step_description">
+							Shop your heart out with all the confidence in fit you need!
+						</div>
+			    	</div>
+
+			    <div id="sign_up_now">
+			    	<button>Sign Up Now</button>
+			    </div>
+			</div>
+
+			<div id="male_female_hologram">
+				<%= image_tag "male_female_hologram.png" %>
+			</div>
+			
+
+	</div>
+	
+</body>

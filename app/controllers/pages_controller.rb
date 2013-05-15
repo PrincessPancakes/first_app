@@ -56,5 +56,14 @@ class PagesController < ApplicationController
   def _settings_page
     
   end
+
+
+  def empty_settings_page
+    
+  end
+
+   def home_page
+    render layout: false
+  end
     
 end
